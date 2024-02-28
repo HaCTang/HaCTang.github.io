@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo-NexT首页浮动预览</title>
-    <url>/2024/02/28/Hexo-NexT%E9%A6%96%E9%A1%B5%E6%B5%AE%E5%8A%A8%E9%A2%84%E8%A7%88/</url>
-    <content><![CDATA[<p>NexT: 从<a href="https://theme-next.js.org/next-7-6-0-released/?highlight=auto_excerpt#Remove-cheers-and-auto-excerpt-1284">NexT 7.6.0</a>开始，NexT取消了首页预览设置，即auto_excerpt。</p>
-<p><a href="https://hexo.io/docs/tag-plugins#Post-Excerpt">Hexo Post Excerpt</a>支持在文章中嵌入标记</p>
-<span id="more"></span>
-
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
-
-<p>会将其之上的内容作为预览内容</p>
-]]></content>
-      <categories>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo博客如何插入图片</title>
     <url>/2024/02/29/Hexo%E5%8D%9A%E5%AE%A2%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<p>众所周知，在md文件中插入图片的语法为<code>![A](path, &quot;title&quot;)</code>。</p>
@@ -43,6 +24,25 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-NexT首页浮动预览</title>
+    <url>/2024/02/28/Hexo-NexT%E9%A6%96%E9%A1%B5%E6%B5%AE%E5%8A%A8%E9%A2%84%E8%A7%88/</url>
+    <content><![CDATA[<p>NexT: 从<a href="https://theme-next.js.org/next-7-6-0-released/?highlight=auto_excerpt#Remove-cheers-and-auto-excerpt-1284">NexT 7.6.0</a>开始，NexT取消了首页预览设置，即auto_excerpt。</p>
+<p><a href="https://hexo.io/docs/tag-plugins#Post-Excerpt">Hexo Post Excerpt</a>支持在文章中嵌入标记</p>
+<span id="more"></span>
+
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+
+<p>会将其之上的内容作为预览内容</p>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
