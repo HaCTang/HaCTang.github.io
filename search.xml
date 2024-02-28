@@ -44,32 +44,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2023/08/08/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Organotrifluoroborate enhances tumor targeting of fibroblast activation protein inhibitors for targeted radionuclide therapy</title>
     <url>/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/</url>
     <content><![CDATA[<p style="text-indent:2em">We designed a new radioligand named FT-FAPI which means fast-treatment FAPI. This compound is composed of 3 parts: 18F can be facilely labeled in BF3 via isotopic exchange, DOTA is the gold standard chelator for most radiometals, and finally, the FAPI-04 for FAP targeting. We hope that FT-FAPI can realize radiotheranostics in a single molecule. 
@@ -109,6 +83,56 @@
       <tags>
         <tag>Radiopharmaceuticals</tag>
         <tag>Drug Discovery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo博客如何插入图片</title>
+    <url>/2024/02/29/Hexo%E5%8D%9A%E5%AE%A2%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>众所周知，在md文件中插入图片的语法为<code>![A](path, &quot;title&quot;)</code>。</p>
+<p>其中<strong>方括号中A</strong>是图片描述（选填），<strong>圆括号中path</strong>是图片路径（必填），<strong>引号中title</strong>是图片悬浮标题（选填）。</p>
+<p>一般来说有三种图片路径，分别是<strong>相对路径，绝对路径和网络路径</strong>。前人之述备矣。在这里我们主要介绍一下在Hexo中如何成功地部署图片。</p>
+<p>在hexo中使用<strong>文章资源文件夹</strong>需要在<code>config.yaml</code>文件中更改一下配置：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>当该配置被应用后，使用<code>hexo new</code>&#x2F;<code>hexo n</code>命令创建新文章时，会生成相同名字的文件夹，也就是文章资源文件夹。例如：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;**Hexo博客如何插入图片**&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>npm install hexo-renderer-marked</code>安装插件，之后在<code>config.yaml</code>中<code>post_asset_folder: true</code>后增加两行代码，更改配置如下：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder</span>: <span class="literal">true</span></span><br><span class="line"><span class="attr">marked</span>:</span><br><span class="line">  <span class="attr">prependRoot</span>: <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>之后就可以在使用<code>![](image.jpg)</code>的方式愉快的插入图片了！</p>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/08/08/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>

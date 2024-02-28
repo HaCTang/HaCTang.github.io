@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-02-28T14:51:28.941Z</updated>
+  <updated>2024-02-28T16:13:05.478Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo博客如何插入图片</title>
+    <link href="http://example.com/2024/02/29/Hexo%E5%8D%9A%E5%AE%A2%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/"/>
+    <id>http://example.com/2024/02/29/Hexo%E5%8D%9A%E5%AE%A2%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</id>
+    <published>2024-02-28T16:11:44.000Z</published>
+    <updated>2024-02-28T16:13:05.478Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;众所周知，在md文件中插入图片的语法为&lt;code&gt;![A](path, &amp;quot;title&amp;quot;)&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;其中&lt;strong&gt;方括号中A&lt;/strong&gt;是图片描述（选填），&lt;strong&gt;圆括号中path&lt;/strong&gt;是图片路径（必填</summary>
+      
+    
+    
+    
+    <category term="Web" scheme="http://example.com/categories/Web/"/>
+    
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo-NexT首页浮动预览</title>
