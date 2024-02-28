@@ -252,7 +252,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-02-29 00:11:44 / Modified: 00:13:05" itemprop="dateCreated datePublished" datetime="2024-02-29T00:11:44+08:00">2024-02-29</time>
+      <time title="Created: 2024-02-29 00:11:44 / Modified: 00:27:40" itemprop="dateCreated datePublished" datetime="2024-02-29T00:11:44+08:00">2024-02-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -275,19 +275,14 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>众所周知，在md文件中插入图片的语法为<code>![A](path, &quot;title&quot;)</code>。</p>
-<p>其中<strong>方括号中A</strong>是图片描述（选填），<strong>圆括号中path</strong>是图片路径（必填），<strong>引号中title</strong>是图片悬浮标题（选填）。</p>
-<p>一般来说有三种图片路径，分别是<strong>相对路径，绝对路径和网络路径</strong>。前人之述备矣。在这里我们主要介绍一下在Hexo中如何成功地部署图片。</p>
-<p>在hexo中使用<strong>文章资源文件夹</strong>需要在<code>config.yaml</code>文件中更改一下配置：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>当该配置被应用后，使用<code>hexo new</code>&#x2F;<code>hexo n</code>命令创建新文章时，会生成相同名字的文件夹，也就是文章资源文件夹。例如：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">&quot;**Hexo博客如何插入图片**&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>npm install hexo-renderer-marked</code>安装插件，之后在<code>config.yaml</code>中<code>post_asset_folder: true</code>后增加两行代码，更改配置如下：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder</span>: <span class="literal">true</span></span><br><span class="line"><span class="attr">marked</span>:</span><br><span class="line">  <span class="attr">prependRoot</span>: <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>之后就可以在使用<code>![](image.jpg)</code>的方式愉快的插入图片了！</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/02/29/Hexo%E5%8D%9A%E5%AE%A2%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
