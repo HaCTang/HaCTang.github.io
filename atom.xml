@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-02-28T11:07:38.281Z</updated>
+  <updated>2024-02-28T11:17:15.318Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/"/>
     <id>http://example.com/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/</id>
     <published>2023-09-27T11:31:09.000Z</published>
-    <updated>2024-02-28T11:07:38.281Z</updated>
+    <updated>2024-02-28T11:17:15.318Z</updated>
     
     
     
@@ -29,7 +29,9 @@
     <category term="Scientific Research" scheme="http://example.com/categories/Scientific-Research/"/>
     
     
-    <category term="Radiopharmaceuticals, Drug Discovery" scheme="http://example.com/tags/Radiopharmaceuticals-Drug-Discovery/"/>
+    <category term="Radiopharmaceuticals" scheme="http://example.com/tags/Radiopharmaceuticals/"/>
+    
+    <category term="Drug Discovery" scheme="http://example.com/tags/Drug-Discovery/"/>
     
   </entry>
   
