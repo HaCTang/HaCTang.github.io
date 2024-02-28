@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-02-27T11:31:09.345Z</updated>
+  <updated>2024-02-28T11:07:38.281Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -18,23 +18,27 @@
   
   <entry>
     <title>Organotrifluoroborate enhances tumor targeting of fibroblast activation protein inhibitors for targeted radionuclide therapy</title>
-    <link href="http://example.com/2024/02/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/"/>
-    <id>http://example.com/2024/02/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/</id>
-    <published>2024-02-27T11:31:09.000Z</published>
-    <updated>2024-02-27T11:31:09.345Z</updated>
+    <link href="http://example.com/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/"/>
+    <id>http://example.com/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/</id>
+    <published>2023-09-27T11:31:09.000Z</published>
+    <updated>2024-02-28T11:07:38.281Z</updated>
     
     
     
     
+    <category term="Scientific Research" scheme="http://example.com/categories/Scientific-Research/"/>
+    
+    
+    <category term="Radiopharmaceuticals, Drug Discovery" scheme="http://example.com/tags/Radiopharmaceuticals-Drug-Discovery/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2024/02/27/hello-world/"/>
-    <id>http://example.com/2024/02/27/hello-world/</id>
-    <published>2024-02-27T10:42:40.019Z</published>
-    <updated>2024-02-27T10:42:40.019Z</updated>
+    <link href="http://example.com/2023/08/08/hello-world/"/>
+    <id>http://example.com/2023/08/08/hello-world/</id>
+    <published>2023-08-08T09:10:08.000Z</published>
+    <updated>2024-02-28T11:05:47.961Z</updated>
     
     
       
@@ -44,6 +48,10 @@
     
     
     
+    <category term="Web" scheme="http://example.com/categories/Web/"/>
+    
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
     
   </entry>
   
