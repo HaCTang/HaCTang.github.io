@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo-NexT首页浮动预览</title>
-    <url>/2024/02/28/Hexo-NexT%E9%A6%96%E9%A1%B5%E6%B5%AE%E5%8A%A8%E9%A2%84%E8%A7%88/</url>
-    <content><![CDATA[<p>NexT: 从<a href="https://theme-next.js.org/next-7-6-0-released/?highlight=auto_excerpt#Remove-cheers-and-auto-excerpt-1284">NexT 7.6.0</a>开始，NexT取消了首页预览设置，即auto_excerpt。</p>
-<p><a href="https://hexo.io/docs/tag-plugins#Post-Excerpt">Hexo Post Excerpt</a>支持在文章中嵌入标记</p>
-<span id="more"></span>
-
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
-
-<p>会将其之上的内容作为预览内容</p>
-]]></content>
-      <categories>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo博客如何插入图片</title>
     <url>/2024/02/29/Hexo%E5%8D%9A%E5%AE%A2%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<p>众所周知，在md文件中插入图片的语法为<code>![A](path, &quot;title&quot;)</code>。</p>
@@ -43,6 +24,25 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-NexT首页浮动预览</title>
+    <url>/2024/02/28/Hexo-NexT%E9%A6%96%E9%A1%B5%E6%B5%AE%E5%8A%A8%E9%A2%84%E8%A7%88/</url>
+    <content><![CDATA[<p>NexT: 从<a href="https://theme-next.js.org/next-7-6-0-released/?highlight=auto_excerpt#Remove-cheers-and-auto-excerpt-1284">NexT 7.6.0</a>开始，NexT取消了首页预览设置，即auto_excerpt。</p>
+<p><a href="https://hexo.io/docs/tag-plugins#Post-Excerpt">Hexo Post Excerpt</a>支持在文章中嵌入标记</p>
+<span id="more"></span>
+
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+
+<p>会将其之上的内容作为预览内容</p>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
@@ -76,31 +76,31 @@
 
 <span id="more"></span>
 
-<p><img src="/blog/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/1.jpg" alt="1"></p>
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/1.jpg" alt="1"></p>
 <p style="text-indent:2em">We first characterized the 18F labeled FT-FAPI in vitro, as we can see, 18F-FT-FAPI has Good stability, High cellular uptake, High affinity to Fap-positive cells, High internalization rate within 6 hours, and most importantly, the high tumor accumulation and Low non-target uptake as exhibited in biodistribution study
 
-<p><img src="/blog/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/2.jpg" alt="2"></p>
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/2.jpg" alt="2"></p>
 <p style="text-indent:2em">18F-FT-FAPI shows highest tumour accumulation, and no obvious uptake existed in other major organs except for the kidney and bladder. Compared to 18F-FT-FAPI, the tumour uptake of 18F-AMBF3-FAPI-04 is significantly lower. More importantly, much higher uptake exists in the non-target organs including the gallbladder, liver, and intestine, indicating that the lack of DOTA affects the excretion of FAPI. To our delight, the tumour uptake of 18F-FT-FAPI is also significantly higher than that of 68Ga-FAPI-04, suggesting that the introduction of AMBF3 may improve the tumour-targeting of FAPI.
 
-<p><img src="/blog/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/3.jpg" alt="3"></p>
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/3.jpg" alt="3"></p>
 <p style="text-indent:2em">Therefore, we used 68Ga to label FT-FAPI for the head to head comparison with 68Ga-FAPI-04 in the same mice. Again, we are delighted to find that 68Ga-FT-FAPI shows higher tumour uptake and cleaner background than that of FAPI-04 with 4 hours.
 
-<p><img src="/blog/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/4.jpg" alt="4"></p>
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/4.jpg" alt="4"></p>
 <p style="text-indent:2em">The biodistribution study corroborates to the head-to-head imaging that FT-FAPI owns higher tumor uptake. In addition, 68Ga-FT-FAPI shows significantly higher internalization rates than FAPI-04. The molecular docking shows that FT-FAPI may form more hydrogen bonds with residues on FAP protein due to its extra triazole ring and charge-separating groups on AMBF3. The above data may explain the excellent pharmacokinetics of FT-FAPI, and made 18F/68Ga-FT-FAPI promising for cancer diagnosis.
 
-<p><img src="/blog/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/5.jpg" alt="5"></p>
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/5.jpg" alt="5"></p>
 <p style="text-indent:2em">Encouraged by the data of FT-FAPI, we then screened the FAP binding moiety, expecting to obtain more potent compounds. We designed 3 additional compounds composed of AMBF3, DOTA, and FAPI-02/21/46 since these 3 compounds are accepted as potent FAP inhibitors in preclinical and clinical studies. As shown in these Figures, 18F-FT-FAPI has the highest tumour uptake and the lowest non-target uptake, followed by FT-FAPI-21 and FT-FAPI-46, and finally FT-FAPI-02. Thus, FT-FAPI was promoted to the exploration of subsequent therapeutic experiments.
 
-<p><img src="/blog/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/6.jpg" alt="6"></p>
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/6.jpg" alt="6"></p>
 <p style="text-indent:2em">Due to the rapid clearance of FAPI in vivo, we think that the therapeutic nuclide suitable for FT-FAPI should be 213Bi whose half-life is 46 min. Before the radionuclide treatment, we labeled FT-FAPI with 209Bi and 18F to mimic the pharmacokinetics of 213Bi-FT-FAPI. As we can see, high tumour uptake and rapid renal clearance of this tracer within 2 h post-injection can be observed and quantified by in vivo PET imaging and ex vivo biodistribution studies.
 
-<p><img src="/blog/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/7.jpg" alt="7"></p>
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/7.jpg" alt="7"></p>
 <p style="text-indent:2em">The body weight of all mice remained stable during the 30 days. And no long-term toxicity was found in the treatment group, as tested by blood counts and biochemistry analysis.
 
-<p><img src="/blog/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/8.jpg" alt="8"></p>
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/8.jpg" alt="8"></p>
 <p style="text-indent:2em">Finally, we explored whether this companion diagnostic method can be applied to other alpha nuclides. We performed PET imaging using 18F-natPb-FT-FAPI and 18F-natTb-FT-FAPI. 18F-natPb-FT-FAPI exhibits significantly lower tumour uptake compared to both 18F-FT-FAPI and 68Ga-FT-FAPI. Since the coordination of DOTA to 212Pb is actually unstable, another chelator named TCMC is considered as the better choice for 212Pb. Therefore, we replaced DOTA on FT-FAPI with TCMC and conducted 18F-natPb-TCMC-FT-FAPI PET imaging and the results show that the modification of the chelator significantly reduced the radioactive uptake at the tumour. These results indicate that isotopic substitution in chelators will seriously affect the in vivo pharmacokinetics. For FT-FAPI, the 18F and radiometal labeling moieties are orthogonal, so, 18F-FT-FAPI as a companion diagnostic strategy is universal for α nuclides.
 
-<p><img src="/blog/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/9.jpg" alt="9"></p>
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/9.jpg" alt="9"></p>
 <p>Yu, Liu.; <strong>Haocheng, Tang</strong>.; Tianchi, Song.; Mengxin, Xu.; Junyi, Chen.; Xi-Yang, Cui.; Yuxiang, Han.; Zhu, Li.; Zhibo, Liu. Organotrifluoroborate Enhances Tumour Targeting of Fibroblast Activation Protein Inhibitors for Targeted Radionuclide Therapy. <em>Eur J Nucl Med Mol Imaging</em>, 2023, 10.1007&#x2F;s00259-023-06230–06233.</p>
 ]]></content>
       <categories>
