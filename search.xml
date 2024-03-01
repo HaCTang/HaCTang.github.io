@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo-NexT首页浮动预览</title>
+    <url>/2024/02/28/Hexo-NexT%E9%A6%96%E9%A1%B5%E6%B5%AE%E5%8A%A8%E9%A2%84%E8%A7%88/</url>
+    <content><![CDATA[<p>NexT: 从<a href="https://theme-next.js.org/next-7-6-0-released/?highlight=auto_excerpt#Remove-cheers-and-auto-excerpt-1284">NexT 7.6.0</a>开始，NexT取消了首页预览设置，即auto_excerpt。</p>
+<p><a href="https://hexo.io/docs/tag-plugins#Post-Excerpt">Hexo Post Excerpt</a>支持在文章中嵌入标记</p>
+<span id="more"></span>
+
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+
+<p>会将其之上的内容作为预览内容</p>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo博客如何插入图片</title>
-    <url>/blog/2024/02/29/Hexo%E5%8D%9A%E5%AE%A2%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <url>/2024/02/29/Hexo%E5%8D%9A%E5%AE%A2%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<p>众所周知，在md文件中插入图片的语法为<code>![A](path, &quot;title&quot;)</code>。</p>
 <span id="more"></span>
 
@@ -27,27 +46,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo-NexT首页浮动预览</title>
-    <url>/blog/2024/02/28/Hexo-NexT%E9%A6%96%E9%A1%B5%E6%B5%AE%E5%8A%A8%E9%A2%84%E8%A7%88/</url>
-    <content><![CDATA[<p>NexT: 从<a href="https://theme-next.js.org/next-7-6-0-released/?highlight=auto_excerpt#Remove-cheers-and-auto-excerpt-1284">NexT 7.6.0</a>开始，NexT取消了首页预览设置，即auto_excerpt。</p>
-<p><a href="https://hexo.io/docs/tag-plugins#Post-Excerpt">Hexo Post Excerpt</a>支持在文章中嵌入标记</p>
-<span id="more"></span>
-
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
-
-<p>会将其之上的内容作为预览内容</p>
-]]></content>
-      <categories>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>NexT设置彩色标签</title>
-    <url>/blog/2024/02/28/NexT%E8%AE%BE%E7%BD%AE%E5%BD%A9%E8%89%B2%E6%A0%87%E7%AD%BE/</url>
+    <url>/2024/02/28/NexT%E8%AE%BE%E7%BD%AE%E5%BD%A9%E8%89%B2%E6%A0%87%E7%AD%BE/</url>
     <content><![CDATA[<p>效果图详见我的网站：<a href="https://hactang.github.io/tags/">Tags | HaCTang’s Group</a>。</p>
 <p>参考了<a href="https://grainmad.github.io/2022/12/07/NEXT%E8%AE%BE%E7%BD%AE%E5%BD%A9%E8%89%B2%E6%A0%87%E7%AD%BE/">NEXT设置彩色标签 | 代码如诗 (grainmad.github.io)</a>的步骤。</p>
 <span id="more"></span>
@@ -71,7 +71,7 @@
   </entry>
   <entry>
     <title>Organotrifluoroborate enhances tumor targeting of fibroblast activation protein inhibitors for targeted radionuclide therapy</title>
-    <url>/blog/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/</url>
+    <url>/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/</url>
     <content><![CDATA[<p style="text-indent:2em">We designed a new radioligand named FT-FAPI which means fast-treatment FAPI. This compound is composed of 3 parts: 18F can be facilely labeled in BF3 via isotopic exchange, DOTA is the gold standard chelator for most radiometals, and finally, the FAPI-04 for FAP targeting. We hope that FT-FAPI can realize radiotheranostics in a single molecule. 
 
 <span id="more"></span>
@@ -113,7 +113,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/blog/2023/08/08/hello-world/</url>
+    <url>/2023/08/08/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <span id="more"></span>
 
