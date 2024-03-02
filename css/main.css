@@ -1696,7 +1696,7 @@ pre code {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  width: 700px;
+  width: 800px;
 }
 @media (max-width: 767px) {
   .footer-inner {
@@ -1705,12 +1705,12 @@ pre code {
 }
 @media (min-width: 1200px) {
   .footer-inner {
-    width: 800px;
+    width: 900px;
   }
 }
 @media (min-width: 1600px) {
   .footer-inner {
-    width: 900px;
+    width: 1000px;
   }
 }
 .use-motion .footer {
@@ -2800,7 +2800,7 @@ header.header {
 }
 header.header {
   margin: 0 auto;
-  width: 700px;
+  width: 800px;
 }
 @media (max-width: 767px) {
   header.header {
@@ -2809,17 +2809,17 @@ header.header {
 }
 @media (min-width: 1200px) {
   header.header {
-    width: 800px;
+    width: 900px;
   }
 }
 @media (min-width: 1600px) {
   header.header {
-    width: 900px;
+    width: 1000px;
   }
 }
 .main-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 800px;
   padding-bottom: 80px;
 }
 @media (max-width: 767px) {
@@ -2829,12 +2829,12 @@ header.header {
 }
 @media (min-width: 1200px) {
   .main-inner {
-    width: 800px;
+    width: 900px;
   }
 }
 @media (min-width: 1600px) {
   .main-inner {
-    width: 900px;
+    width: 1000px;
   }
 }
 @media (max-width: 767px) {
@@ -2896,7 +2896,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffffc3;
+  background: #fffff5;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
