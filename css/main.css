@@ -261,7 +261,7 @@ p {
   margin: 0 0 20px;
 }
 a {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #222;
   color: var(--link-color);
   cursor: pointer;
   outline: 0;
@@ -2896,7 +2896,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #fffff5;
+  background: #5999bb;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
