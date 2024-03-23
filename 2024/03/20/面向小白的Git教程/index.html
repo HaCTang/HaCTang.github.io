@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hactang.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":"falseabout","version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="蕞蕞蕞白痴的用法以Github为例（默认已经安装了Gitbash）： 首先创建一个repo，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向小白的Git教程">
+<meta property="og:url" content="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="HaCTang&#39;s Group">
+<meta property="og:description" content="蕞蕞蕞白痴的用法以Github为例（默认已经安装了Gitbash）： 首先创建一个repo，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/Untitled.png">
+<meta property="og:image" content="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/1.png">
+<meta property="og:image" content="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/2.png">
+<meta property="og:image" content="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/3.png">
+<meta property="og:image" content="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/4.png">
+<meta property="og:image" content="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/5.png">
+<meta property="og:image" content="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/6.png">
+<meta property="og:image" content="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/7.png">
+<meta property="og:image" content="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/8.png">
+<meta property="og:image" content="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/9.png">
+<meta property="og:image" content="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/10.png">
+<meta property="article:published_time" content="2024-03-20T13:59:36.000Z">
+<meta property="article:modified_time" content="2024-03-20T14:18:23.375Z">
+<meta property="article:author" content="HaCTang">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/Untitled.png">
+
+
+<link rel="canonical" href="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/","path":"2024/03/20/面向小白的Git教程/","title":"面向小白的Git教程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>面向小白的Git教程 | HaCTang's Group</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="HaCTang's Group" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">HaCTang's Group</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">唐浩程课题组</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-blogs"><a href="/Blogs/" rel="section"><i class="fa fa-flask fa-fw"></i>Blogs</a></li><li class="menu-item menu-item-aboutme"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>Aboutme</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-drivers-license fa-fw"></i>Friends</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%95%9E%E8%95%9E%E8%95%9E%E7%99%BD%E7%97%B4%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">蕞蕞蕞白痴的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E7%94%A8%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">进阶用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E8%AF%A6%E7%BB%86%E5%91%BD%E4%BB%A4"><span class="nav-number">2.1.</span> <span class="nav-text">提交到远程仓库的详细命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC"><span class="nav-number">2.2.</span> <span class="nav-text">从远程仓库获取最新版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-log%EF%BC%9A%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95"><span class="nav-number">2.3.</span> <span class="nav-text">Git log：查看提交历史记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pull-Request%EF%BC%88PR%EF%BC%89%EF%BC%9A%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81"><span class="nav-number">2.4.</span> <span class="nav-text">Pull Request（PR）：提交代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-reset-%EF%BC%88%E6%85%8E%E7%94%A8%EF%BC%89"><span class="nav-number">2.5.</span> <span class="nav-text">Git reset （慎用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="nav-number">2.6.</span> <span class="nav-text">分支管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%B3%E8%A6%81%E8%BF%98%E5%8E%9F%E4%BB%A3%E7%A0%81%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9ARevert"><span class="nav-number">2.7.</span> <span class="nav-text">想要还原代码怎么办：Revert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cherry-Pick"><span class="nav-number">2.8.</span> <span class="nav-text">Cherry-Pick</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="HaCTang"
+      src="/images/avatar.JPG">
+  <p class="site-author-name" itemprop="name">HaCTang</p>
+  <div class="site-description" itemprop="description">Happy & Pure</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/HaCTang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HaCTang" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://scholar.google.com/citations?user=o1f8a5IAAAAJ&hl=zh-CN" title="Google Scholar → https:&#x2F;&#x2F;scholar.google.com&#x2F;citations?user&#x3D;o1f8a5IAAAAJ&amp;hl&#x3D;zh-CN" rel="noopener me" target="_blank"><i class="fab fa-google fa-fw"></i>Google Scholar</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2000011773@stu.pku.edu.cn" title="E-Mail 1 → mailto:2000011773@stu.pku.edu.cn" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail 1</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2316301466@qq.com" title="E-Mail 2 → mailto:2316301466@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail 2</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/438853042?spm_id_from=333.1007.0.0" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;438853042?spm_id_from&#x3D;333.1007.0.0" rel="noopener me" target="_blank"><i class="fab fa-grav fa-fw"></i>BiliBili</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="http://www.tanglab.cn/" title="http:&#x2F;&#x2F;www.tanglab.cn&#x2F;" rel="noopener" target="_blank">PKUtanglab</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
+      <meta itemprop="name" content="HaCTang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HaCTang's Group">
+      <meta itemprop="description" content="Happy & Pure">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="面向小白的Git教程 | HaCTang's Group">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          面向小白的Git教程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-03-20 21:59:36 / Modified: 22:18:23" itemprop="dateCreated datePublished" datetime="2024-03-20T21:59:36+08:00">2024-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="蕞蕞蕞白痴的用法"><a href="#蕞蕞蕞白痴的用法" class="headerlink" title="蕞蕞蕞白痴的用法"></a>蕞蕞蕞白痴的用法</h2><p>以Github为例（默认已经安装了Gitbash）：</p>
+<p>首先创建一个repo，</p>
+<p><img src="/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/Untitled.png" alt="Untitled"></p>
+<span id="more"></span>
+
+<p>在你的某个文件夹打开Gitbash：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/HaCTang/Code.git </span><br></pre></td></tr></table></figure>
+
+<p>如果遇到下面的问题：</p>
+<p><img src="/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/1.png" alt="1"></p>
+<p>请打开魔法！</p>
+<p>正常情况下是：</p>
+<div align=center>  <img src="2.png" width=75%> </div>
+
+<p>此时会得到一个Code文件夹，这不是普通的文件夹，进入，输入ls -la，会发现有.git隐藏文件夹，里面就会有一些用户信息，commit信息等。</p>
+<p>从Bash进入Code文件夹：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> code // 总所周知gitbash不区分大小写（（</span><br></pre></td></tr></table></figure>
+
+<p>拷入一些文件，例如：</p>
+<p><img src="/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/3.png" alt="Untitled"></p>
+<p>然后：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<p>接着：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit  -m  <span class="string">&quot;提交信息&quot;</span> //（提交的信息是你的项目说明）</span><br></pre></td></tr></table></figure>
+
+<p>最后输入（可以通过 <code>git status</code>查看当前在哪个branch）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin main // 分支的名称也可以在gitbash中直接看到</span><br></pre></td></tr></table></figure>
+
+<p>然后就可以在你的主页上看到上传的文件了。</p>
+<h2 id="进阶用法"><a href="#进阶用法" class="headerlink" title="进阶用法"></a>进阶用法</h2><h3 id="提交到远程仓库的详细命令"><a href="#提交到远程仓库的详细命令" class="headerlink" title="提交到远程仓库的详细命令"></a><strong>提交到远程仓库的详细命令</strong></h3><p>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;<br>查看默认的远程主机名：git remote ，一般默认为origin<br>查看默认的本地分支名：git branch , 一般为master（主分支）<br>远程分支名：一般与本地分支名相同<br>查看所有远程分支：git branch -r</p>
+<h3 id="从远程仓库获取最新版本"><a href="#从远程仓库获取最新版本" class="headerlink" title="从远程仓库获取最新版本"></a><strong>从远程仓库获取最新版本</strong></h3><p>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;<br>多人开发时，先git pull拉取远程仓库中的其他人的修改，<br>合并到本地仓库之后再git push<br>如果本地仓库和远程仓库产生冲突，则需要手动修改</p>
+<h3 id="Git-log：查看提交历史记录"><a href="#Git-log：查看提交历史记录" class="headerlink" title="Git log：查看提交历史记录"></a><strong>Git log：查看提交历史记录</strong></h3><p>git log 显示提交历史<br>git log –graph 显示提交历史并且分支合并信息<br>git log –author&#x3D;xxx 显示某个作者所有提交信息</p>
+<p><img src="/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/4.png" alt="Untitled"></p>
+<h3 id="Pull-Request（PR）：提交代码"><a href="#Pull-Request（PR）：提交代码" class="headerlink" title="Pull Request（PR）：提交代码"></a><strong>Pull Request（PR）：提交代码</strong></h3><p><img src="/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/5.png" alt="Untitled"></p>
+<h3 id="Git-reset-（慎用）"><a href="#Git-reset-（慎用）" class="headerlink" title="Git reset （慎用）"></a><strong>Git reset （慎用）</strong></h3><p>假设现在系统有两次正常提交（A和B）,而C和D是错误提交。现在要把C和D去掉，而此时HEAD指针（当前最新版本）已经指向D。为此，我们要把HEAD指针移动到B。<br>运行命令：git reset <commit-num-B> (commit编号可以查看git log得到）</p>
+<div align=center>  <img src="6.png" width=80%> </div>
+
+<p>运行之后，HEAD指针会移动到B，但是本地的代码仍处在D的状态。要想把代码也改为B的状态，需要git reset –hard <commit-num-B> 。</p>
+<ul>
+<li><strong>慎用–hard , 未提交(commit)的修改不能被恢复！</strong></li>
+</ul>
+<div align=center>  <img src="7.png" width=70%> </div>
+
+<p>在本地执行git reset (–hard)后，远程仓库指针和代码仍然保持在D不变。若要更新远程仓库就需要强推：运行git push -f</p>
+<ul>
+<li><strong>慎用-f ，远程仓库会失去所有C和D的信息</strong><br>若要找回D的信息，可运行git reflog 找到reset操作对应的D版本号，重新git reset回去。然后可以重新git push到远程</li>
+</ul>
+<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a><strong>分支管理</strong></h3><p>何时需要多分支？——稳定分支和开发分支；多人协同，分别写各自的模块</p>
+<p>git branch 查看所有分支和当前分支</p>
+<p>git checkout <branch_name> 切换到某个分支</p>
+<p>——切换之前要保证工作区没有尚未提交的修改，否则会报错。</p>
+<p>——可以git add并且git commit提交所有修改 &#x2F; git stash暂存修改 &#x2F; git reset –hard删除修改</p>
+<p>git checkout -b <new_branch> 从当前状态新建分支并切换过去</p>
+<p>git branch -d <branch_name> 删除分支</p>
+<p>git checkout <file_name> 还原某个文件的修改（checkout的另一个作用）</p>
+<p>——和git reset–hard一样，不能恢复！</p>
+<p>git stash 暂存修改</p>
+<p>——做完push&#x2F;checkout等操作后，可以git stash pop还原修改（弹出暂存）</p>
+<h3 id="想要还原代码怎么办：Revert"><a href="#想要还原代码怎么办：Revert" class="headerlink" title="想要还原代码怎么办：Revert"></a><strong>想要还原代码怎么办：Revert</strong></h3><p>首先，运行git revert 5lk4er，创建D’，抹去D的影响<br>其次，运行git revert 76sdeb，创建C’，抹去C的影响<br>这样操作的话，保留了C和D的信息，HEAD指针是往前移动的，因此可以直接使用git push命令推动到远程仓库里，一般是鼓励使用的</p>
+<div align=center>  <img src="8.png" width=70%> </div>
+
+<h3 id="Cherry-Pick"><a href="#Cherry-Pick" class="headerlink" title="Cherry-Pick"></a><strong>Cherry-Pick</strong></h3><p>假如有三个提交，中间B是错误提交，但是C是正确提交，如何处理？<br>git revert命令先把 C 提交和B 提交全部回退，再使用 cherry-pick 命令将 C 提交重新再生成一个新的提交 C’’，这样就实现了将B提交回退的需求。</p>
+<p>运行命令：git cherry-pick  76sdeb</p>
+<p><img src="/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/9.png" alt="Untitled"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/10.png" alt="Untitled"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/Git/" rel="tag"># Git</a>
+          </div>
+          <script type="text/javascript">
+  		var tagsall=document.getElementsByClassName("post-tags")
+  		for (var i = tagsall.length - 1; i >= 0; i--){
+      			var tags=tagsall[i].getElementsByTagName("a");
+      			for (var j = tags.length - 1; j >= 0; j--) {
+          			var golden_ratio = 0.618033988749895;
+          			var s = 0.5;
+          			var v = 0.999;
+          			var h = golden_ratio + Math.random()*0.8 - 0.5;
+          			var h_i = parseInt(h * 6);
+          			var f = h * 6 - h_i;
+          			var p = v * (1 - s);
+          			var q = v * (1 - f * s);
+          			var t = v * (1 - (1 - f) * s);
+          			var r, g, b;
+          			switch (h_i) {
+              				case 0:
+                  				r = v;
+                  				g = t;
+                  				b = p;
+                  				break;
+              				case 1:
+                  				r = q;
+                  				g = v;
+                  				b = p;
+                  				break;
+              				case 2:
+                  				r = p;
+                  				g = v;
+                  				b = t;
+                  				break;
+              				case 3 :
+                  				r = p;
+                  				g = q;
+                  				b = v;
+                  				break;
+              				case 4:
+                  				r = t;
+                  				g = p;
+                  				b = v;
+                  				break;
+              				case 5:
+                  				r = v;
+                  				g = p;
+                  				b = q;
+                  				break;
+             				default:
+                  				r = 1;
+                  				g = 1;
+                  				b = 1;
+           	 		}
+          			tags[j].style.background = "rgba("+parseInt(r*255)+","+parseInt(g*255)+","+parseInt(b*255)+","+0.7+")";
+      			}
+  		}
+          </script>
+          <style>
+	.post-tags a {
+    		display: inline-block;
+   		font-size: 0.8em;
+    		padding: 0px 10px;
+    		border-radius: 8px;
+    		color: rgb(85, 85, 85);
+    		border: 0px;
+	}
+	.post-tags a:hover{
+    		box-shadow: 0px 5px 15px 0px rgba(0,0,0,.4);
+    		transform: scale(1.1);
+    		transition-duration: 0.15s;
+	}
+	</style>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/03/18/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%86%99%E5%87%BA%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%B9%B6%E8%A1%8C%E7%A8%8B%E5%BA%8F-1-C-%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/" rel="prev" title="[从0开始写出科学计算并行程序]1.C++文件读取">
+                  <i class="fa fa-angle-left"></i> [从0开始写出科学计算并行程序]1.C++文件读取
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">HaCTang</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">   </script>
+  
+</body>
+</html>

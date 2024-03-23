@@ -6,7 +6,7 @@
   <link href="https://hactang.github.io/atom.xml" rel="self"/>
   
   <link href="https://hactang.github.io/"/>
-  <updated>2024-03-10T15:31:38.100Z</updated>
+  <updated>2024-03-20T14:18:23.375Z</updated>
   <id>https://hactang.github.io/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面向小白的Git教程</title>
+    <link href="https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/"/>
+    <id>https://hactang.github.io/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/</id>
+    <published>2024-03-20T13:59:36.000Z</published>
+    <updated>2024-03-20T14:18:23.375Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;蕞蕞蕞白痴的用法&quot;&gt;&lt;a href=&quot;#蕞蕞蕞白痴的用法&quot; class=&quot;headerlink&quot; title=&quot;蕞蕞蕞白痴的用法&quot;&gt;&lt;/a&gt;蕞蕞蕞白痴的用法&lt;/h2&gt;&lt;p&gt;以Github为例（默认已经安装了Gitbash）：&lt;/p&gt;
+&lt;p&gt;首先创建一个repo，&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/Untitled.png&quot; alt=&quot;Untitled&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Linux" scheme="https://hactang.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://hactang.github.io/tags/Linux/"/>
+    
+    <category term="Git" scheme="https://hactang.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[从0开始写出科学计算并行程序]1.C++文件读取</title>
+    <link href="https://hactang.github.io/2024/03/18/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%86%99%E5%87%BA%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%B9%B6%E8%A1%8C%E7%A8%8B%E5%BA%8F-1-C-%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/"/>
+    <id>https://hactang.github.io/2024/03/18/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%86%99%E5%87%BA%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%B9%B6%E8%A1%8C%E7%A8%8B%E5%BA%8F-1-C-%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/</id>
+    <published>2024-03-18T08:10:07.000Z</published>
+    <updated>2024-03-18T08:10:07.140Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>[力量训练]力速共轭训练体系</title>
