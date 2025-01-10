@@ -6,7 +6,7 @@
   <link href="https://hactang.github.io/atom.xml" rel="self"/>
   
   <link href="https://hactang.github.io/"/>
-  <updated>2025-01-10T21:08:48.384Z</updated>
+  <updated>2025-01-10T21:36:13.308Z</updated>
   <id>https://hactang.github.io/</id>
   
   <author>
@@ -17,20 +17,26 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Conda</title>
     <link href="https://hactang.github.io/2025/01/10/MingYuanConda/"/>
     <id>https://hactang.github.io/2025/01/10/MingYuanConda/</id>
-    <published>2025-01-10T21:08:17.667Z</published>
-    <updated>2025-01-10T21:08:48.384Z</updated>
+    <published>2025-01-10T21:36:36.000Z</published>
+    <updated>2025-01-10T21:36:13.308Z</updated>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;Conda&quot;&gt;&lt;a href=&quot;#Conda&quot; class=&quot;headerlink&quot; title=&quot;Conda&quot;&gt;&lt;/a&gt;Conda&lt;/h1&gt;&lt;h2 id=&quot;Installation&quot;&gt;&lt;a href=&quot;#Installation&quot; class=&quot;headerli</summary>
+    <summary type="html">&lt;h2 id=&quot;Installation&quot;&gt;&lt;a href=&quot;#Installation&quot; class=&quot;headerlink&quot; title=&quot;Installation&quot;&gt;&lt;/a&gt;Installation&lt;/h2&gt;&lt;p&gt;After login, use &lt;code&gt;nano&lt;/c</summary>
       
     
     
     
+    <category term="Linux" scheme="https://hactang.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://hactang.github.io/tags/Linux/"/>
+    
+    <category term="Script" scheme="https://hactang.github.io/tags/Script/"/>
     
   </entry>
   

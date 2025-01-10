@@ -22,17 +22,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hactang.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":"falseabout","version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="CondaInstallationAfter login, use nano or vim to modify ~&#x2F;.bashrc. Add the following code to the end of ~&#x2F;.bashrcand save the file: 12. &#x2F;opt&#x2F;miniconda&#x2F;etc&#x2F;profile.d&#x2F;conda.shexport PATH&#x3D;&quot;&#x2F;opt&#x2F;mini">
+    <meta name="description" content="InstallationAfter login, use nano or vim to modify ~&#x2F;.bashrc. Add the following code to the end of ~&#x2F;.bashrcand save the file: 12. &#x2F;opt&#x2F;miniconda&#x2F;etc&#x2F;profile.d&#x2F;conda.shexport PATH&#x3D;&quot;&#x2F;opt&#x2F;miniconda">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HaCTang&#39;s Group">
+<meta property="og:title" content="Conda">
 <meta property="og:url" content="https://hactang.github.io/2025/01/10/MingYuanConda/index.html">
 <meta property="og:site_name" content="HaCTang&#39;s Group">
-<meta property="og:description" content="CondaInstallationAfter login, use nano or vim to modify ~&#x2F;.bashrc. Add the following code to the end of ~&#x2F;.bashrcand save the file: 12. &#x2F;opt&#x2F;miniconda&#x2F;etc&#x2F;profile.d&#x2F;conda.shexport PATH&#x3D;&quot;&#x2F;opt&#x2F;mini">
+<meta property="og:description" content="InstallationAfter login, use nano or vim to modify ~&#x2F;.bashrc. Add the following code to the end of ~&#x2F;.bashrcand save the file: 12. &#x2F;opt&#x2F;miniconda&#x2F;etc&#x2F;profile.d&#x2F;conda.shexport PATH&#x3D;&quot;&#x2F;opt&#x2F;miniconda">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-01-10T21:08:17.667Z">
-<meta property="article:modified_time" content="2025-01-10T21:08:48.384Z">
+<meta property="article:published_time" content="2025-01-10T21:36:36.000Z">
+<meta property="article:modified_time" content="2025-01-10T21:36:13.308Z">
 <meta property="article:author" content="HaCTang">
-<meta property="article:tag" content="Computational Biophysics, CADD, Molecular Dynamics, HPC, Machine Learning">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Script">
 <meta name="twitter:card" content="summary">
 
 
@@ -40,10 +41,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hactang.github.io/2025/01/10/MingYuanConda/","path":"2025/01/10/MingYuanConda/","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hactang.github.io/2025/01/10/MingYuanConda/","path":"2025/01/10/MingYuanConda/","title":"Conda"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title> | HaCTang's Group</title>
+<title>Conda | HaCTang's Group</title>
   
 
 
@@ -144,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Conda"><span class="nav-number">1.</span> <span class="nav-text">Conda</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Installation"><span class="nav-number">1.1.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rule"><span class="nav-number">1.2.</span> <span class="nav-text">Rule</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Installation"><span class="nav-number">1.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rule"><span class="nav-number">2.</span> <span class="nav-text">Rule</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -239,12 +240,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | HaCTang's Group">
+      <meta itemprop="name" content="Conda | HaCTang's Group">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          Conda
         </h1>
 
         <div class="post-meta-container">
@@ -256,7 +257,16 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-01-10 16:08:17 / Modified: 16:08:48" itemprop="dateCreated datePublished" datetime="2025-01-10T16:08:17-05:00">2025-01-10</time>
+      <time title="Created: 2025-01-10 16:36:36 / Modified: 16:36:13" itemprop="dateCreated datePublished" datetime="2025-01-10T16:36:36-05:00">2025-01-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
     </span>
 
   
@@ -275,7 +285,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="Conda"><a href="#Conda" class="headerlink" title="Conda"></a>Conda</h1><h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>After login, use <code>nano</code> or <code>vim</code> to modify <code>~/.bashrc</code>. Add the following code to the end of <code>~/.bashrc</code>and save the file:</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>After login, use <code>nano</code> or <code>vim</code> to modify <code>~/.bashrc</code>. Add the following code to the end of <code>~/.bashrc</code>and save the file:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">. /opt/miniconda/etc/profile.d/conda.sh</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;/opt/miniconda/bin:<span class="variable">$PATH</span>&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>Then in shell:</p>
@@ -294,6 +304,80 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/Script/" rel="tag"># Script</a>
+          </div>
+          <script type="text/javascript">
+  		var tagsall=document.getElementsByClassName("post-tags")
+  		for (var i = tagsall.length - 1; i >= 0; i--){
+      			var tags=tagsall[i].getElementsByTagName("a");
+      			for (var j = tags.length - 1; j >= 0; j--) {
+          			var golden_ratio = 0.618033988749895;
+          			var s = 0.5;
+          			var v = 0.999;
+          			var h = golden_ratio + Math.random()*0.8 - 0.5;
+          			var h_i = parseInt(h * 6);
+          			var f = h * 6 - h_i;
+          			var p = v * (1 - s);
+          			var q = v * (1 - f * s);
+          			var t = v * (1 - (1 - f) * s);
+          			var r, g, b;
+          			switch (h_i) {
+              				case 0:
+                  				r = v;
+                  				g = t;
+                  				b = p;
+                  				break;
+              				case 1:
+                  				r = q;
+                  				g = v;
+                  				b = p;
+                  				break;
+              				case 2:
+                  				r = p;
+                  				g = v;
+                  				b = t;
+                  				break;
+              				case 3 :
+                  				r = p;
+                  				g = q;
+                  				b = v;
+                  				break;
+              				case 4:
+                  				r = t;
+                  				g = p;
+                  				b = v;
+                  				break;
+              				case 5:
+                  				r = v;
+                  				g = p;
+                  				b = q;
+                  				break;
+             				default:
+                  				r = 1;
+                  				g = 1;
+                  				b = 1;
+           	 		}
+          			tags[j].style.background = "rgba("+parseInt(r*255)+","+parseInt(g*255)+","+parseInt(b*255)+","+0.7+")";
+      			}
+  		}
+          </script>
+          <style>
+	.post-tags a {
+    		display: inline-block;
+   		font-size: 0.8em;
+    		padding: 0px 10px;
+    		border-radius: 8px;
+    		color: rgb(85, 85, 85);
+    		border: 0px;
+	}
+	.post-tags a:hover{
+    		box-shadow: 0px 5px 15px 0px rgba(0,0,0,.4);
+    		transform: scale(1.1);
+    		transition-duration: 0.15s;
+	}
+	</style>
 
         
 
