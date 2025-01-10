@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>/2025/01/10/MingYuanConda/</url>
+    <content><![CDATA[<h1 id="Conda"><a href="#Conda" class="headerlink" title="Conda"></a>Conda</h1><h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>After login, use <code>nano</code> or <code>vim</code> to modify <code>~/.bashrc</code>. Add the following code to the end of <code>~/.bashrc</code>and save the file:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">. /opt/miniconda/etc/profile.d/conda.sh</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;/opt/miniconda/bin:<span class="variable">$PATH</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Then in shell:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>Test if conda is initialized successfully：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda --version</span><br></pre></td></tr></table></figure>
+
+<p>if the result is <code>conda 24.11.1</code>, it means you can access conda.</p>
+<h2 id="Rule"><a href="#Rule" class="headerlink" title="Rule"></a>Rule</h2><p>When you use conda to build a new environment, please name it as your “**{id}_{env_name}**”, avoid potential collision:<br>For example, “hat170_tf1.4”.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>面向小白的Git教程</title>
     <url>/2024/03/20/%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD%E7%9A%84Git%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="蕞蕞蕞白痴的用法"><a href="#蕞蕞蕞白痴的用法" class="headerlink" title="蕞蕞蕞白痴的用法"></a>蕞蕞蕞白痴的用法</h2><p>以Github为例（默认已经安装了Gitbash）：</p>
