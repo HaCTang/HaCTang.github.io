@@ -250,9 +250,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-01-10 16:36:36 / Modified: 16:36:13" itemprop="dateCreated datePublished" datetime="2025-01-10T16:36:36-05:00">2025-01-10</time>
+      <time title="Created: 2025-01-10 16:36:36" itemprop="dateCreated datePublished" datetime="2025-01-10T16:36:36-05:00">2025-01-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-01-14 15:59:56" itemprop="dateModified" datetime="2025-01-14T15:59:56-05:00">2025-01-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -285,7 +291,32 @@
 
 <p>if the result is <code>conda 24.11.1</code>, it means you can access conda.</p>
 <h2 id="Rule"><a href="#Rule" class="headerlink" title="Rule"></a>Rule</h2><p>When you use conda to build a new environment, please name it as your “**{id}_{env_name}**”, avoid potential collision:<br>For example, “hat170_tf1.4”.</p>
+<h2 id="For-those-who-want-to-use-GPU-in-tmux"><a href="#For-those-who-want-to-use-GPU-in-tmux" class="headerlink" title="For those who want to use GPU in tmux:"></a>For those who want to use GPU in tmux:</h2><p>If you want to use a different CUDA and cuDNN version in your environment, please change the following code according to your own environment. </p>
+<p>Open tmux:</p>
+<ol>
+<li>First biuld a activate script dir:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/.conda/envs/hat170_tf1.15GPU/etc/conda/activate.d</span><br></pre></td></tr></table></figure>
 
+<ol>
+<li>Biuld a bash file to set environmental variables:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> &lt;&lt; <span class="string">&#x27;EOF&#x27;</span> &gt; ~/.conda/envs/hat170_tf1.15GPU/etc/conda/activate.d/env_vars.sh</span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="built_in">export</span> CUDA_HOME=/usr/local/cuda</span><br><span class="line"><span class="built_in">export</span> CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7,8,9</span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/usr/local/amber24/lib:/usr/local/cuda/lib:/usr/local/cuda/lib64</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>Add execution permission:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x ~/.conda/envs/hat170_tf1.15GPU/etc/conda/activate.d/env_vars.sh</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>Reactivate the environment to apply the settings:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda deactivate</span><br><span class="line">conda activate hat170_tf1.15GPU</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>Test your settings:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;CUDA_HOME: <span class="variable">$CUDA_HOME</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;CUDA_VISIBLE_DEVICES: <span class="variable">$CUDA_VISIBLE_DEVICES</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;LD_LIBRARY_PATH: <span class="variable">$LD_LIBRARY_PATH</span>&quot;</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
