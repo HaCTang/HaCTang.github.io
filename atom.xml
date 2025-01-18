@@ -6,7 +6,7 @@
   <link href="https://hactang.github.io/atom.xml" rel="self"/>
   
   <link href="https://hactang.github.io/"/>
-  <updated>2025-01-14T20:59:56.009Z</updated>
+  <updated>2025-01-18T16:04:57.377Z</updated>
   <id>https://hactang.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gromacs2024.4</title>
+    <link href="https://hactang.github.io/2025/01/18/MingYuanGmx24/"/>
+    <id>https://hactang.github.io/2025/01/18/MingYuanGmx24/</id>
+    <published>2025-01-18T16:04:12.000Z</published>
+    <updated>2025-01-18T16:04:57.377Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Installation&quot;&gt;&lt;a href=&quot;#Installation&quot; class=&quot;headerlink&quot; title=&quot;Installation&quot;&gt;&lt;/a&gt;Installation&lt;/h2&gt;&lt;p&gt;After login, use &lt;code&gt;nano&lt;/c</summary>
+      
+    
+    
+    
+    <category term="Linux" scheme="https://hactang.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://hactang.github.io/tags/Linux/"/>
+    
+    <category term="Script" scheme="https://hactang.github.io/tags/Script/"/>
+    
+  </entry>
   
   <entry>
     <title>Conda</title>
