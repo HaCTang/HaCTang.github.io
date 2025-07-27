@@ -6,7 +6,7 @@
   <link href="https://hactang.github.io/atom.xml" rel="self"/>
   
   <link href="https://hactang.github.io/"/>
-  <updated>2025-07-27T16:28:19.185Z</updated>
+  <updated>2025-07-27T16:39:07.762Z</updated>
   <id>https://hactang.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://hactang.github.io/2025/07/27/SiteAF3/"/>
     <id>https://hactang.github.io/2025/07/27/SiteAF3/</id>
     <published>2025-07-27T15:14:09.000Z</published>
-    <updated>2025-07-27T16:28:19.185Z</updated>
+    <updated>2025-07-27T16:39:07.762Z</updated>
     
     
     <summary type="html">&lt;p style=&quot;text-indent:2em&quot;&gt;Accurate structure prediction of biomolecular complexes is crucial for understanding biological processes and enabling drug discovery. While AlphaFold3 represents a significant advancement, enhancing its accuracy for specific binding sites remains a challenge. We present SiteAF3, a novel method for accurate site-specific folding via conditional diffusion, built upon the AlphaFold3 framework. SiteAF3 refines the diffusion process by fixing the receptor structure and optionally incorporating binding pocket and hotspot residue information. Comprehensive evaluations on protein-small molecule, protein-peptide, and protein-nucleic acid datasets demonstrate that SiteAF3 consistently outperforms AlphaFold3, achieving higher accuracy in complex structure prediction especially for orphan proteins and allosteric ligands, with reduced computational cost. SiteAF3 offers a user-friendly plug-in compatible with AlphaFold3, providing a valuable tool for more accurate modeling of biomolecular interactions..</summary>

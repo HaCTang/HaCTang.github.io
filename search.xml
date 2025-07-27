@@ -1,39 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>SiteAF3: Accurate Site-specific Folding via Conditional Diffusion Based on Alphafold3</title>
-    <url>/2025/07/27/SiteAF3/</url>
-    <content><![CDATA[<p style="text-indent:2em">Accurate structure prediction of biomolecular complexes is crucial for understanding biological processes and enabling drug discovery. While AlphaFold3 represents a significant advancement, enhancing its accuracy for specific binding sites remains a challenge. We present SiteAF3, a novel method for accurate site-specific folding via conditional diffusion, built upon the AlphaFold3 framework. SiteAF3 refines the diffusion process by fixing the receptor structure and optionally incorporating binding pocket and hotspot residue information. Comprehensive evaluations on protein-small molecule, protein-peptide, and protein-nucleic acid datasets demonstrate that SiteAF3 consistently outperforms AlphaFold3, achieving higher accuracy in complex structure prediction especially for orphan proteins and allosteric ligands, with reduced computational cost. SiteAF3 offers a user-friendly plug-in compatible with AlphaFold3, providing a valuable tool for more accurate modeling of biomolecular interactions.. 
+    <title>Covalent Radiopharmaceuticals</title>
+    <url>/2024/03/01/Covalent-Radiopharmaceuticals/</url>
+    <content><![CDATA[<p style="text-indent:2em">Covalent bonding radiopharmaceuticals have been developed in some studies, but they all have obvious deficiencies, mainly due to their high lipophilicity and non-specific covalent bonding. These fatal defects make them completely unable to be used for targeted radionuclide therapy.
 
 <span id="more"></span>
 
-<p><img src="/2025/07/27/SiteAF3/1.png" alt="1"></p>
-<p style="text-indent:2em">The overall architecture of SiteAF3 (Fig. 1a) mirrors that of AlphaFold3 (AF3), inheriting AF3's inference workflow, which comprises four primary components: the input preparation, the representation learning, the structure prediction, and the confidence assessment. Our main divergences from AF3 lie in two key aspects: firstly, the structure prediction module employs a novel conditional diffusion model, and secondly, the representation learning incorporates additional binding pocket and hotspot residue information via the MSA module.
+<p><img src="/2024/03/01/Covalent-Radiopharmaceuticals/1.jpg" alt="1.jpg"></p>
+<p style="text-indent:2em">Traditional covalent nuclear drugs directly conjugates nuclides on the basis of covalent drugs, lacking rational design. We solve the sore points of targeted radionuclide therapy by adding covalent warheads to nuclear drugs. We can realize high uptake, long retention and strong curative effect through irreversible covalent binding .
 
-<p style="text-indent:2em">In diffusion process, the atomic coordinates of the ligand are initialized with noise based on a Gaussian distribution centered around the pocket center with a specified radius, while the relative atomic coordinates of the receptor are directly fixed. Another different point is situated within the second sequence local attention block, where SiteAF3 introduces a mask to update only the coordinates of the ligand.
+<p><img src="/2024/03/01/Covalent-Radiopharmaceuticals/2.jpg" alt="2.jpg"></p>
+<p style="text-indent:2em">First, we demonstrate the covalent mechanism at the molecular level. At the start, we did autoradiograph. The RDC-protein complex’s blots in autoradiograph highly matched that in Coomassie blue protein staining while covalent-warhead-blocked RDC seemed no binding. Then we used MS/MS and docking confirmed specific covalent binding sites. 
 
-<p style="text-indent:2em">In our initial explorations with the base SiteAF3 model, we observed that despite the noise initialization of ligand atomic coordinates was around the pocket, the predicted ligand binding occurred at a site distant from the intended pocket occasionally. To address this issue, we first used genetic searching tools in AF3 to get templates for MSA module to evaluate how much binding pocket information can be learned. We then experimented with directly embedding information about designated hotspot and pocket residues via the MSA module. These strategies led to a substantial improvement in the accuracy of the model's predictions, effectively guiding the ligand towards the desired binding site. However, we observed that MSA may introduce wrong binding site bias. We then used pocket information to mask full-length MSA templates after alignment to minimize the misleading impact as much as possible. Through pocket-masked AF3 MSA, SiteAF3 demonstrated a significant improvement on the pocket-well-defined protein-ligand dataset.
+<p><img src="/2024/03/01/Covalent-Radiopharmaceuticals/3.jpg" alt="3.jpg"></p>
+<p style="text-indent:2em">And then we took it a step further in vivo. To our astonishment and delight, the images and therapeutic effect are rather beautiful. At 9 hours, you can see much higher accumulation on tumor, and clearer background. 
 
-<img src="2.png" alt="2" style="width:200px;">
-
-<p style="text-indent:2em">MSA may introduce wrong binding site bias on unseen protein and ligands. 
-
-<p style="text-indent:2em">An intriguing result is presented in Fig. 2, where SiteAF3, when utilizing AF3_MSA, consistently demonstrates higher cumulative prediction accuracy than the standard AF3 model within the 0-10 Å range, which aligns with our expectations. However, when not employing AF3_MSA, SiteAF3 initially underperforms compared to AF3. Interestingly, beyond a threshold of 5 Å, the proportion of correctly predicted targets for the po+hot and baseline configurations gradually exceeds that of AF3. This observation suggests that the MSA templates leveraged by AF3 might occasionally introduce misleading information regarding the binding site for unseen protein-ligand pairs. This trend was not observed in the PoseBustersV2 dataset, where all data were included in AF3's training set. This discrepancy suggests a potential overfitting of the genetic searching-derived data during the representation learning phase for seen datasets. To our delight, pocket masked AF3 MSA mode consistently performed the best within the 0-10 Å range: its trend in the range of 0-5 Å was the same as that of the model using full-length MSA templates, but with a greater slope. In the range of 5-10 Å, it was always higher than the models without using genetic searching, and the slope of the ending curve tended to be consistent with the others. This result suggested that pocket guidance can effectively eliminate the hidden bias in full-length MSA templates
-
-<p><img src="/2025/07/27/SiteAF3/Table-1.png" alt="3"></p>
-<p style="text-indent:2em">Prediction accuracy across biomolecular complexes.
-
-<p style="text-indent:2em">SiteAF3 contributes a lot in protein and small molecule interaction modelling, while keeps outperforming AlphaFold3 on other datasets.
-
-<p><strong>Haocheng, Tang</strong>.; Junmei, Wang. Accurate Site-specific Folding via Conditional Diffusion Based on Alphafold3. <em>BioArxiv</em>, 2025, 10.1101&#x2F;2025.07.06.663385.</p>
+<p><img src="/2024/03/01/Covalent-Radiopharmaceuticals/4.jpg" alt="4.jpg"></p>
 ]]></content>
       <categories>
         <category>Scientific Research</category>
       </categories>
       <tags>
+        <tag>Radiopharmaceuticals</tag>
         <tag>Drug Discovery</tag>
-        <tag>AlphaFold</tag>
-        <tag>Diffusion</tag>
       </tags>
   </entry>
   <entry>
@@ -52,23 +42,48 @@
       </tags>
   </entry>
   <entry>
-    <title>Gromacs2024.4</title>
-    <url>/2025/01/18/MingYuanGmx24/</url>
-    <content><![CDATA[<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>After login, use <code>nano</code> or <code>vim</code> to modify <code>~/.bashrc</code>. Add the following code to the end of <code>~/.bashrc</code>and save the file:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;/opt/Gromacs2024/install/bin:<span class="variable">$PATH</span>&quot;</span></span><br><span class="line"><span class="built_in">alias</span> gmx24=<span class="string">&#x27;/opt/Gromacs2024/install/bin/gmx_mpi&#x27;</span></span><br></pre></td></tr></table></figure>
+    <title>Hexo-NexT首页浮动预览</title>
+    <url>/2024/02/28/Hexo-NexT%E9%A6%96%E9%A1%B5%E6%B5%AE%E5%8A%A8%E9%A2%84%E8%A7%88/</url>
+    <content><![CDATA[<p>NexT: 从<a href="https://theme-next.js.org/next-7-6-0-released/?highlight=auto_excerpt#Remove-cheers-and-auto-excerpt-1284">NexT 7.6.0</a>开始，NexT取消了首页预览设置，即auto_excerpt。</p>
+<p><a href="https://hexo.io/docs/tag-plugins#Post-Excerpt">Hexo Post Excerpt</a>支持在文章中嵌入标记</p>
+<span id="more"></span>
 
-<p>Here I rename the command <code>gmx_mpi</code> as <code>gmx24</code> to avoid command conflict when using <strong>Gmx18</strong> on the same machine.</p>
-<p>Then in shell:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
 
-<p>Test if  <strong>Gmx24</strong> is initialized successfully：</p>
+<p>会将其之上的内容作为预览内容</p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>Web</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
-        <tag>Script</tag>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo博客如何插入图片</title>
+    <url>/2024/02/29/Hexo%E5%8D%9A%E5%AE%A2%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>众所周知，在md文件中插入图片的语法为<code>![A](path, &quot;title&quot;)</code>。</p>
+<span id="more"></span>
+
+<p>其中<strong>方括号中A</strong>是图片描述（选填），<strong>圆括号中path</strong>是图片路径（必填），<strong>引号中title</strong>是图片悬浮标题（选填）。</p>
+<p>一般来说有三种图片路径，分别是<strong>相对路径，绝对路径和网络路径</strong>。前人之述备矣。在这里我们主要介绍一下在Hexo中如何成功地部署图片。</p>
+<p>在hexo中使用<strong>文章资源文件夹</strong>需要在<code>config.yaml</code>文件中更改一下配置：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>当该配置被应用后，使用<code>hexo new</code>&#x2F;<code>hexo n</code>命令创建新文章时，会生成相同名字的文件夹，也就是文章资源文件夹。例如：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;**Hexo博客如何插入图片**&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>npm install hexo-renderer-marked</code>安装插件，之后在<code>config.yaml</code>中<code>post_asset_folder: true</code>后增加两行代码，更改配置如下：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder</span>: <span class="literal">true</span></span><br><span class="line"><span class="attr">marked</span>:</span><br><span class="line">  <span class="attr">prependRoot</span>: <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>之后就可以在使用<code>![](image.jpg)</code>的方式愉快的插入图片了！</p>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -119,6 +134,351 @@
       <tags>
         <tag>Linux</tag>
         <tag>Script</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Linux脚本]移入回收站和清除</title>
+    <url>/2024/03/08/Linux%E7%B3%BB%E7%BB%9F%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/</url>
+    <content><![CDATA[<p>通过直接在Linux系统中编写一些快捷脚本，可以大大加快我们的工作速度。</p>
+<span id="more"></span>
+
+<p>在这里我写一个具有“回收站”功能的脚本delete.sh，把它转换成一个自定义的linux命令叫dl，能够删除所指定的文件到某个“回收站”。另外，还写一个“清空回收站”的linux命令叫cl。</p>
+<p>脚本编写时遇见了几个坑点：<br>•  使用fish操纵terminal时，重新部署<code>~/.bashrc</code>文件要记得将fish文件给关闭，否则会报错<br>•  不同系统的回收站位置不一样！有的是在<code>~/recyclebin</code>，而在ubuntu22.04系统上回收站的位置在<code>~/.local/share/Trash/files</code>下</p>
+<p>首先创造一个脚本，我选择的目录是<code>~/local/bin</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim delete.sh</span><br></pre></td></tr></table></figure>
+
+<p>然后在delete.sh写入下面的内容（$1表示第一个参数 $*表示所有参数 $0表示文件名 $#表示参数个数），然后保存并退出:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Running <span class="variable">$0</span> ...&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Move <span class="variable">$#</span> files to recyclebin.&quot;</span></span><br><span class="line"><span class="built_in">mv</span> $* -t ~/.local/share/Trash/files/</span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
+
+<p>接着为脚本添加执行权限：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x delete.sh</span><br></pre></td></tr></table></figure>
+
+<p>然后打开~&#x2F;.bashrc文件:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>在文件结尾处添加:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> dl=<span class="string">&#x27;/usr/local/bin/delete.sh&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> cl=<span class="string">&#x27;rm -rf ~/.local/share/Trash/files *&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后保存并退出。</p>
+<p>重新配置bash：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>然后就可以使用了！</p>
+<p><img src="/2024/03/08/Linux%E7%B3%BB%E7%BB%9F%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/1.png" alt="1.png"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Script</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Gromacs2024.4</title>
+    <url>/2025/01/18/MingYuanGmx24/</url>
+    <content><![CDATA[<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>After login, use <code>nano</code> or <code>vim</code> to modify <code>~/.bashrc</code>. Add the following code to the end of <code>~/.bashrc</code>and save the file:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;/opt/Gromacs2024/install/bin:<span class="variable">$PATH</span>&quot;</span></span><br><span class="line"><span class="built_in">alias</span> gmx24=<span class="string">&#x27;/opt/Gromacs2024/install/bin/gmx_mpi&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>Here I rename the command <code>gmx_mpi</code> as <code>gmx24</code> to avoid command conflict when using <strong>Gmx18</strong> on the same machine.</p>
+<p>Then in shell:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>Test if  <strong>Gmx24</strong> is initialized successfully：</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Script</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NexT设置彩色标签</title>
+    <url>/2024/02/28/NexT%E8%AE%BE%E7%BD%AE%E5%BD%A9%E8%89%B2%E6%A0%87%E7%AD%BE/</url>
+    <content><![CDATA[<p>效果图详见我的网站：<a href="https://hactang.github.io/tags/">Tags | HaCTang’s Group</a>。</p>
+<p>参考了<a href="https://grainmad.github.io/2022/12/07/NEXT%E8%AE%BE%E7%BD%AE%E5%BD%A9%E8%89%B2%E6%A0%87%E7%AD%BE/">NEXT设置彩色标签 | 代码如诗 (grainmad.github.io)</a>的步骤。</p>
+<span id="more"></span>
+
+<h1 id="1-标签页设置彩色标签"><a href="#1-标签页设置彩色标签" class="headerlink" title="1.标签页设置彩色标签"></a><strong>1.标签页设置彩色标签</strong></h1><p>路径 <code>\node_modules\hexo-theme-next\layout</code>下新建<code>tag-color.njk</code>，将以下代码粘贴</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">     <span class="keyword">var</span> alltags = <span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&#x27;tag-cloud-tags&#x27;</span>);</span><br><span class="line">     <span class="keyword">var</span> tags = alltags[<span class="number">0</span>].<span class="title function_">getElementsByTagName</span>(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">var</span> i = tags.<span class="property">length</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">       <span class="keyword">var</span> golden_ratio = <span class="number">0.618033988749895</span>;</span><br><span class="line">       <span class="keyword">var</span> s = <span class="number">0.5</span>;</span><br><span class="line">       <span class="keyword">var</span> v = <span class="number">0.999</span>;</span><br><span class="line">       <span class="keyword">var</span> h = golden_ratio + <span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">0.8</span> - <span class="number">0.5</span>;</span><br><span class="line">       <span class="keyword">var</span> h_i = <span class="built_in">parseInt</span>(h * <span class="number">6</span>);</span><br><span class="line">       <span class="keyword">var</span> f = h * <span class="number">6</span> - h_i;</span><br><span class="line">       <span class="keyword">var</span> p = v * (<span class="number">1</span> - s);</span><br><span class="line">       <span class="keyword">var</span> q = v * (<span class="number">1</span> - f * s);</span><br><span class="line">       <span class="keyword">var</span> t = v * (<span class="number">1</span> - (<span class="number">1</span> - f) * s);</span><br><span class="line">       <span class="keyword">var</span> r, g, b;</span><br><span class="line">       <span class="keyword">switch</span> (h_i) &#123;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">              r = v;</span><br><span class="line">              g = t;</span><br><span class="line">              b = p;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">              r = q;</span><br><span class="line">              g = v;</span><br><span class="line">              b = p;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">              r = p;</span><br><span class="line">              g = v;</span><br><span class="line">              b = t;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">3</span> :</span><br><span class="line">              r = p;</span><br><span class="line">              g = q;</span><br><span class="line">              b = v;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">              r = t;</span><br><span class="line">              g = p;</span><br><span class="line">              b = v;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">              r = v;</span><br><span class="line">              g = p;</span><br><span class="line">              b = q;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="attr">default</span>:</span><br><span class="line">              r = <span class="number">1</span>;</span><br><span class="line">              g = <span class="number">1</span>;</span><br><span class="line">              b = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">       tags[i].<span class="property">style</span>.<span class="property">background</span> = <span class="string">&quot;rgba(&quot;</span>+<span class="built_in">parseInt</span>(r*<span class="number">255</span>)+<span class="string">&quot;,&quot;</span>+<span class="built_in">parseInt</span>(g*<span class="number">255</span>)+<span class="string">&quot;,&quot;</span>+<span class="built_in">parseInt</span>(b*<span class="number">255</span>)+<span class="string">&quot;,&quot;</span>+<span class="number">0.7</span>+<span class="string">&quot;)&quot;</span>;</span><br><span class="line">     &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"> </span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  <span class="selector-class">.tag-cloud-tags</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">text-align</span>: center;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">counter-reset</span>: tags;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  <span class="selector-class">.tag-cloud-tags</span> <span class="selector-tag">a</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">display</span>: inline-block;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">border</span>: <span class="number">0px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">padding</span>: <span class="number">0px</span> <span class="number">10px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">margin</span>: <span class="number">8px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">color</span>: <span class="built_in">rgba</span>(<span class="number">34</span>, <span class="number">34</span>, <span class="number">34</span>, <span class="number">0.8</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="comment">/* 文字前添加相应的符号，content后的Unicode可以自定义*/</span></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  <span class="selector-class">.tag-cloud-tags</span> <span class="selector-tag">a</span><span class="selector-pseudo">:before</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">font-family</span>: <span class="string">&#x27;Font Awesome 5 Free&#x27;</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">content</span>: <span class="string">&quot;\f02b&quot;</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">font-weight</span>: <span class="number">900</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"> </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  <span class="selector-class">.tag-cloud-tags</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">     <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">5px</span> <span class="number">15px</span> <span class="number">0px</span> <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,.<span class="number">4</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">     <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">     <span class="attribute">transition-duration</span>: <span class="number">0.15s</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>然后在<code>node_modules\hexo-theme-next\layout\page.njk</code>中以下位置添加<code>&#123;% include 'tag-color.njk' %&#125;</code></p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;div <span class="keyword">class</span>=<span class="string">&quot;post-body&#123;% if page.direction and page.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot;</span>&gt;</span><br><span class="line">  &#123;%- <span class="keyword">if</span> page.<span class="property">type</span> === <span class="string">&#x27;tags&#x27;</span> %&#125;</span><br><span class="line">    &#123;%- include <span class="string">&#x27;_partials/page/tags.njk&#x27;</span> -%&#125;</span><br><span class="line">  &#123;% elif page.<span class="property">type</span> === <span class="string">&#x27;categories&#x27;</span> %&#125;</span><br><span class="line">    &#123;%- include <span class="string">&#x27;_partials/page/categories.njk&#x27;</span> -%&#125;</span><br><span class="line">  &#123;% elif page.<span class="property">type</span> === <span class="string">&#x27;schedule&#x27;</span> %&#125;</span><br><span class="line">    &#123;%- include <span class="string">&#x27;_partials/page/schedule.njk&#x27;</span> -%&#125;</span><br><span class="line">  &#123;% <span class="keyword">else</span> %&#125;</span><br><span class="line">    &#123;&#123; page.<span class="property">content</span> &#125;&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&#123;% include <span class="string">&#x27;tag-color.njk&#x27;</span> %&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-文章底部标签"><a href="#2-文章底部标签" class="headerlink" title="2.文章底部标签"></a>2.文章底部标签</h1><p>找到<code>node_modules\hexo-theme-next\layout\_macro\post.njk</code>，并在以下含<code>post-tags</code>类的<code>&lt;div&gt;</code>标签后添加<code>&lt;script&gt;</code>和<code>&lt;style&gt;</code>标签，另外注意标签的图标可以在<code>theme.tag_icon</code>字段设置为<code>true</code>替换<code>#</code></p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&#123;%- set tag_indicate = <span class="string">&#x27;&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;&#x27;</span> <span class="keyword">if</span> theme.<span class="property">tag_icon</span> <span class="keyword">else</span> <span class="string">&#x27;#&#x27;</span> %&#125;</span><br><span class="line">&lt;div <span class="keyword">class</span>=<span class="string">&quot;post-tags&quot;</span>&gt;</span><br><span class="line">  &#123;%- <span class="keyword">for</span> tag <span class="keyword">in</span> post.<span class="property">tags</span>.<span class="title function_">toArray</span>() %&#125;</span><br><span class="line">    &lt;a href=<span class="string">&quot;&#123;&#123; url_for(tag.path) &#125;&#125;&quot;</span> rel=<span class="string">&quot;tag&quot;</span>&gt;&#123;&#123; tag_indicate &#125;&#125; &#123;&#123; tag.<span class="property">name</span> &#125;&#125;&lt;/a&gt;</span><br><span class="line">  &#123;%- endfor %&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> tagsall=<span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&quot;post-tags&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">for</span> (<span class="keyword">var</span> i = tagsall.<span class="property">length</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">var</span> tags=tagsall[i].<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;a&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">for</span> (<span class="keyword">var</span> j = tags.<span class="property">length</span> - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> golden_ratio = <span class="number">0.618033988749895</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> s = <span class="number">0.5</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> v = <span class="number">0.999</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> h = golden_ratio + <span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">0.8</span> - <span class="number">0.5</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> h_i = <span class="built_in">parseInt</span>(h * <span class="number">6</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> f = h * <span class="number">6</span> - h_i;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> p = v * (<span class="number">1</span> - s);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> q = v * (<span class="number">1</span> - f * s);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> t = v * (<span class="number">1</span> - (<span class="number">1</span> - f) * s);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> r, g, b;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">switch</span> (h_i) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="keyword">case</span> <span class="number">0</span>:</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = t;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = p;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  <span class="keyword">break</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="keyword">case</span> <span class="number">1</span>:</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = q;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = p;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  <span class="keyword">break</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="keyword">case</span> <span class="number">2</span>:</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = p;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = t;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  <span class="keyword">break</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="keyword">case</span> <span class="number">3</span> :</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = p;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = q;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  <span class="keyword">break</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="keyword">case</span> <span class="number">4</span>:</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = t;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = p;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  <span class="keyword">break</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="keyword">case</span> <span class="number">5</span>:</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = p;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = q;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  <span class="keyword">break</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="attr">default</span>:</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = <span class="number">1</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = <span class="number">1</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = <span class="number">1</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          tags[j].<span class="property">style</span>.<span class="property">background</span> = <span class="string">&quot;rgba(&quot;</span>+<span class="built_in">parseInt</span>(r*<span class="number">255</span>)+<span class="string">&quot;,&quot;</span>+<span class="built_in">parseInt</span>(g*<span class="number">255</span>)+<span class="string">&quot;,&quot;</span>+<span class="built_in">parseInt</span>(b*<span class="number">255</span>)+<span class="string">&quot;,&quot;</span>+<span class="number">0.7</span>+<span class="string">&quot;)&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-class">.post-tags</span> <span class="selector-tag">a</span> &#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">display</span>: inline-block;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">font-size</span>: <span class="number">0.8em</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">padding</span>: <span class="number">0px</span> <span class="number">10px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">color</span>: <span class="built_in">rgb</span>(<span class="number">85</span>, <span class="number">85</span>, <span class="number">85</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">border</span>: <span class="number">0px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-class">.post-tags</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">5px</span> <span class="number">15px</span> <span class="number">0px</span> <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,.<span class="number">4</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">transition-duration</span>: <span class="number">0.15s</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/08/08/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Organotrifluoroborate enhances tumor targeting of fibroblast activation protein inhibitors for targeted radionuclide therapy</title>
+    <url>/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/</url>
+    <content><![CDATA[<p style="text-indent:2em">We designed a new radioligand named FT-FAPI which means fast-treatment FAPI. This compound is composed of 3 parts: 18F can be facilely labeled in BF3 via isotopic exchange, DOTA is the gold standard chelator for most radiometals, and finally, the FAPI-04 for FAP targeting. We hope that FT-FAPI can realize radiotheranostics in a single molecule. 
+
+<span id="more"></span>
+
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/1.jpg" alt="1"></p>
+<p style="text-indent:2em">We first characterized the 18F labeled FT-FAPI in vitro, as we can see, 18F-FT-FAPI has Good stability, High cellular uptake, High affinity to Fap-positive cells, High internalization rate within 6 hours, and most importantly, the high tumor accumulation and Low non-target uptake as exhibited in biodistribution study
+
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/2.jpg" alt="2"></p>
+<p style="text-indent:2em">18F-FT-FAPI shows highest tumour accumulation, and no obvious uptake existed in other major organs except for the kidney and bladder. Compared to 18F-FT-FAPI, the tumour uptake of 18F-AMBF3-FAPI-04 is significantly lower. More importantly, much higher uptake exists in the non-target organs including the gallbladder, liver, and intestine, indicating that the lack of DOTA affects the excretion of FAPI. To our delight, the tumour uptake of 18F-FT-FAPI is also significantly higher than that of 68Ga-FAPI-04, suggesting that the introduction of AMBF3 may improve the tumour-targeting of FAPI.
+
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/3.jpg" alt="3"></p>
+<p style="text-indent:2em">Therefore, we used 68Ga to label FT-FAPI for the head to head comparison with 68Ga-FAPI-04 in the same mice. Again, we are delighted to find that 68Ga-FT-FAPI shows higher tumour uptake and cleaner background than that of FAPI-04 with 4 hours.
+
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/4.jpg" alt="4"></p>
+<p style="text-indent:2em">The biodistribution study corroborates to the head-to-head imaging that FT-FAPI owns higher tumor uptake. In addition, 68Ga-FT-FAPI shows significantly higher internalization rates than FAPI-04. The molecular docking shows that FT-FAPI may form more hydrogen bonds with residues on FAP protein due to its extra triazole ring and charge-separating groups on AMBF3. The above data may explain the excellent pharmacokinetics of FT-FAPI, and made 18F/68Ga-FT-FAPI promising for cancer diagnosis.
+
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/5.jpg" alt="5"></p>
+<p style="text-indent:2em">Encouraged by the data of FT-FAPI, we then screened the FAP binding moiety, expecting to obtain more potent compounds. We designed 3 additional compounds composed of AMBF3, DOTA, and FAPI-02/21/46 since these 3 compounds are accepted as potent FAP inhibitors in preclinical and clinical studies. As shown in these Figures, 18F-FT-FAPI has the highest tumour uptake and the lowest non-target uptake, followed by FT-FAPI-21 and FT-FAPI-46, and finally FT-FAPI-02. Thus, FT-FAPI was promoted to the exploration of subsequent therapeutic experiments.
+
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/6.jpg" alt="6"></p>
+<p style="text-indent:2em">Due to the rapid clearance of FAPI in vivo, we think that the therapeutic nuclide suitable for FT-FAPI should be 213Bi whose half-life is 46 min. Before the radionuclide treatment, we labeled FT-FAPI with 209Bi and 18F to mimic the pharmacokinetics of 213Bi-FT-FAPI. As we can see, high tumour uptake and rapid renal clearance of this tracer within 2 h post-injection can be observed and quantified by in vivo PET imaging and ex vivo biodistribution studies.
+
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/7.jpg" alt="7"></p>
+<p style="text-indent:2em">The body weight of all mice remained stable during the 30 days. And no long-term toxicity was found in the treatment group, as tested by blood counts and biochemistry analysis.
+
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/8.jpg" alt="8"></p>
+<p style="text-indent:2em">Finally, we explored whether this companion diagnostic method can be applied to other alpha nuclides. We performed PET imaging using 18F-natPb-FT-FAPI and 18F-natTb-FT-FAPI. 18F-natPb-FT-FAPI exhibits significantly lower tumour uptake compared to both 18F-FT-FAPI and 68Ga-FT-FAPI. Since the coordination of DOTA to 212Pb is actually unstable, another chelator named TCMC is considered as the better choice for 212Pb. Therefore, we replaced DOTA on FT-FAPI with TCMC and conducted 18F-natPb-TCMC-FT-FAPI PET imaging and the results show that the modification of the chelator significantly reduced the radioactive uptake at the tumour. These results indicate that isotopic substitution in chelators will seriously affect the in vivo pharmacokinetics. For FT-FAPI, the 18F and radiometal labeling moieties are orthogonal, so, 18F-FT-FAPI as a companion diagnostic strategy is universal for α nuclides.
+
+<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/9.jpg" alt="9"></p>
+<p>Yu, Liu.; <strong>Haocheng, Tang</strong>.; Tianchi, Song.; Mengxin, Xu.; Junyi, Chen.; Xi-Yang, Cui.; Yuxiang, Han.; Zhu, Li.; Zhibo, Liu. Organotrifluoroborate Enhances Tumour Targeting of Fibroblast Activation Protein Inhibitors for Targeted Radionuclide Therapy. <em>Eur J Nucl Med Mol Imaging</em>, 2023, 10.1007&#x2F;s00259-023-06230–06233.</p>
+]]></content>
+      <categories>
+        <category>Scientific Research</category>
+      </categories>
+      <tags>
+        <tag>Radiopharmaceuticals</tag>
+        <tag>Drug Discovery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[从0开始写出科学计算并行程序]1.C++文件读取</title>
+    <url>/2024/03/18/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%86%99%E5%87%BA%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%B9%B6%E8%A1%8C%E7%A8%8B%E5%BA%8F-1-C-%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>[体能康复]0.我为什么要做体能康复</title>
+    <url>/2024/03/03/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-0-%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%81%9A%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D/</url>
+    <content><![CDATA[<p style="text-indent:2em">作为一名狂热的运动爱好者以及~自诩的~力量举运动员，我常常问自己喜欢运动的内因是什么，这些内因之间的重要性排序是什么，以及我能通过何种方式去满足这些需求？
+
+<span id="more"></span>
+
+<p style="text-indent:2em">首先，恐怕要让大家失望了，排在第一位的绝不是健康！而是快乐！如果只是健康，那就应该大部分时间躺在床上，多做做有氧，拉伸拉伸，少上班XD。那么运动时什么会让人感到快乐呢？战胜以前的自己，克服一个以前完成不了的重量，打败对手，濒临死亡，忍受肉体的痛苦，挑战极限，炫技等等都能使自己感到快乐。
+
+<p style="text-indent:2em">其次，作为一名~自诩的~运动员，更好的运动成绩始终是我追求的目标。聊天的时候，兔兔和壳哥都对我说过类似的话，如果你以运动员自居，那你的目标就应当是世界最强。比如90公斤级就应该拉350公斤，蹲300公斤，推200公斤。当你在比赛规则下达到这个水平时，没人会在意你使用了何种技术和训练方法。
+
+<p style="text-indent:2em">然后，才是健康。如何更加安全地去提高自己的水平？以前受过的旧伤如何进行康复？先前养成的错误形体习惯如何纠正？
+
+<p style="text-indent:2em">最后，还有各种各样杂七杂八的因素，比如外貌和所谓的精气神之类的，但重要性于我而言占比不超过10%，就不在此细说。
+
+<p style="text-indent:2em">我自己而言，其实是到了初中三年级才开始热爱锻炼（最开始是因为体考hhh）。当时174厘米的身高一下瘦到了65公斤，运动表现得到了巨量提升（主要是有氧，1000米进了3分钟，3000米也只需要11分出头）。小时候也进行过~微量~锻炼，主要是乒乓球和羽毛球dddd（其实没啥用）。上高中时迷上了踢足球，几乎天天练1小时，同时也做一些简单的家庭健身。上大学一年级时，踢比赛高速带球时被人推了一下，左腿腓肠肌受伤，丧失了加速和突然刹车的能力，修养了半年，这期间正式在健身房规律训练（~虽然不一定科学~）。开始时玩儿街健，结果做双力臂时把肩膀拉伤了。不得不又瞎练了一段时间，感觉自己的训练很划水，不科学，并且卧推遇到了瓶颈期。大二下机缘巧合刷到了力量举视频，遂于大二暑假练入了力量举的大坑。大三下报了柔道课，然后某次在社团中于某重20公斤于我的加拿大朋友进行实战，然后左腿内测副韧带断裂（是真的`惨`！），然后两个月没练腿。同时开启卧推专项计划，企图使自己的卧推暴涨到120，结果在使用弹弓时右手手肘三头拉伤（血泪啊！！！）后面去美国暑期访学，又划了两个月，肘伤才好。后面准备PKUfitness五四力量挑战赛时，又发现自己左右侧身体肌肉严重不平衡这一现象，这与我长期进行非对称运动密切相关。
+
+<p style="text-indent:2em">身边有不少朋友训练水平很高，却依然受伤，也有韧带全断选手拿下级别冠和腰突选手创造全国纪录。我开始意识到，我对身体的了解和掌控实在是太粗浅了。要想长期快乐地运动，实现自己的运动目标，提高自己的运动表现，并且也是为了自己的健康甚至是外貌考虑，我应该全面开发自己身体的基础能力。这就是我学习体能康复的原因。]]></content>
+      <categories>
+        <category>Physical Training</category>
+      </categories>
+      <tags>
+        <tag>体能康复</tag>
+        <tag>力量举</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[体能康复]1.力量举选手也会核心过弱？</title>
+    <url>/2024/03/03/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-1-%E5%8A%9B%E9%87%8F%E4%B8%BE%E9%80%89%E6%89%8B%E4%B9%9F%E4%BC%9A%E6%A0%B8%E5%BF%83%E8%BF%87%E5%BC%B1%EF%BC%9F/</url>
+    <content><![CDATA[<p>回答标题的提问之前，我们需要知道什么是<strong>核心</strong>。核心肌群如下图所示：</p>
+<span id="more"></span>
+
+<div align=center>  <img src="1.jpg" width=60%> </div>
+
+<p>对于一个力量举选手而言由于长期的硬拉训练，他的竖脊肌一般会很发达；然而由于现代人不可避免的久坐，他的髂腰肌和臀中小肌难免无力，若是再加上呼吸习惯不佳，会导致他出现骨盆前倾。而骨盆前倾则会导致一系列问题，包括腰部的持续紧张，腰围增大，膝盖内扣，足弓塌陷。对于力量举选手而言，久坐虽然不会产生明显的腰痛，但会显著增加运动损伤的风险，同时降低运动表现能力。</p>
+<p>下面列出了几种不需要特殊器械的训练方式。注意：<u>长期持续的训练更加重要</u>，建议两天进行一次训练，几周即可出现明显效果。</p>
+<h2 id="呼吸训练"><a href="#呼吸训练" class="headerlink" title="呼吸训练"></a>呼吸训练</h2><p>通过恰当的呼吸训练，能够激活横膈膜肌，骨盆底肌群，腹部深层肌群，从而将骨盆前端上提，减小腰围，同时下降胸廓，缓解肋骨外翻。</p>
+<h3 id="仰卧腹式呼吸"><a href="#仰卧腹式呼吸" class="headerlink" title="仰卧腹式呼吸"></a>仰卧腹式呼吸</h3><p>准备动作：训练者平躺在地板上，使脊柱处于中立位，略微下沉肩胛骨，全身放松，注意收下巴确保颈椎也处于中立位。<br><font color=Red>吸气</font>：使用鼻子平缓吸气（2-3s），吸到腹腔里。肚子向四面八方撑开，能感受到腹斜肌，腹直肌发力。注意身体其它位置放松，头不要乱动，不要耸肩，胸腔可以进气但不要过于扩张。<br><font color=Blue>吐气</font>：使用鼻子嘴巴平缓吐气（2-3s），可以发出“哈”的声音，注意是一声，并且可以过喉咙，嘴巴可以张大一些，吐尽腹部的气体。感受骨盆底肌，腹斜肌，腹横肌，腹直肌，横膈膜肌的收缩。具体而言，骨盆底肌感受是上小便时用力，腹斜肌和腹横肌用手指轻按会感到明显收紧并呈现丝状，横膈膜肌收缩时能用手感受到胸廓和肋骨下压，整体会感受到腰椎曲度变小，几乎完全贴合地面，骨盆会从前倾位向后倾位翻转。<br>重复10至12次，开始时可进行4组，适应后可以进行后面的进阶训练。</p>
+<div align=center>  <img src="仰卧呼吸.jpg" width=30%> </div>
+
+<h3 id="死虫式"><a href="#死虫式" class="headerlink" title="死虫式"></a>死虫式</h3><p>准备动作：训练者以如图所示的姿势平躺在地面上。注意髋角，膝角均为90°，勾脚尖，两腿之间的间隔为一拳距离，脊柱保持中立位，略微下沉肩胛骨，全身放松，注意收下巴确保颈椎也处于中立位。这种动作可以对着镜子，或者录像，或者找一个辅助者来进行规范。<br>吸气与呼气动作与仰卧腹式呼吸过程相同。<br>注意<strong>腰部不要有酸胀感</strong>，否则应该调整动作或进行退阶训练。</p>
+<div align=center>  <img src="死虫式.jpg" width=50%> </div>
+
+<p>进阶练习：找一位辅助者对你进行微扰，比如轻轻拨或拉你的腿或手，训练者在维持标准动作和呼吸不变的情况下进行对抗，以达到增强深层核心对抗能力。</p>
+<h3 id="反向鸟狗式"><a href="#反向鸟狗式" class="headerlink" title="反向鸟狗式"></a>反向鸟狗式</h3><p>准备动作：与死虫式相同。<br>吐气过程中，同侧腿和同侧手打开伸直，另一侧的腿和手不动。下放到底部时吐气完全，核心收紧，腰部几乎不受力。可能会出现颤抖的情况，属于正常现象。<br>吸气过程中，同侧腿和同侧手同时收回，吸满气时回到标准的死虫式。<br>重复上述过程总共12次。<br>注意<strong>腰部不要有酸胀感</strong>，否则应该调整动作或进行退阶训练。</p>
+<div align=center>  <img src="鸟狗式.jpg" width=35%> </div>
+
+<h2 id="髂腰肌训练"><a href="#髂腰肌训练" class="headerlink" title="髂腰肌训练"></a>髂腰肌训练</h2><p>可以辅助骨盆前倾位回到正常位置。</p>
+<h3 id="僵虫式"><a href="#僵虫式" class="headerlink" title="僵虫式"></a>僵虫式</h3><p>准备动作：与死虫式相似，区别在于下压脚尖（不用特别紧张地绷脚尖）<br>吐气过程中，单侧腿往下放，<strong>注意维持膝角不变，只改变髋角</strong>，直至大脚拇指尖触地，此时核心恰好完全收紧。<br>吸气过程中，单侧腿往上提，注意维持膝角不变，只改变髋角，吸满气时回到标准的死虫式。然后换边交替训练。<br>左右重复共12次，训练过程中会出现髂腰肌的明显酸胀感，属于正常现象。髂腰肌过于紧张时可进行蛇伸展式拉伸。每组训练完后可站立行走放松。</p>
+<div align=center>  <img src="僵虫式.jpg" width=35%> </div>
+
+<h2 id="臀中小肌训练"><a href="#臀中小肌训练" class="headerlink" title="臀中小肌训练"></a>臀中小肌训练</h2><p>可以有效改善膝盖内扣，同时增强伸髋力量。</p>
+<h3 id="蚌式开合"><a href="#蚌式开合" class="headerlink" title="蚌式开合"></a>蚌式开合</h3><p>准备动作：如图所示侧躺。<strong>勾脚尖，脚后跟，臀部，颈椎呈三点一线。</strong>保持脊柱中立位，收下巴。弹力带可有可无。可让辅助者帮你调整动作。<br>吐气过程中，单侧腿缓慢打开至最大处，注意保持两脚贴紧，骨盆一直垂直于地面（开始时可由辅助者进行提示），不要左右翻转，丧失平衡。<br>吸气过程中，缓慢回到准备动作初始位置，腹式呼吸将气吸满。<br>左右重复共12次，训练过程中会出现臀中肌和臀小肌的明显酸胀感伴有顶峰收缩时颤抖，属于正常现象。每组训练完后可站立行走放松。</p>
+<div align=center>  <img src="蚌式开合.jpg" width=100%> </div>
+
+<h3 id="臀桥"><a href="#臀桥" class="headerlink" title="臀桥"></a>臀桥</h3><p>这个训练主要放在后面的屈髋和伸髋中进行讲解。</p>
+<h3 id="分腿蹲及变式"><a href="#分腿蹲及变式" class="headerlink" title="分腿蹲及变式"></a>分腿蹲及变式</h3><p>这个训练方式就特别多了，比如保加利亚深蹲和箭步蹲。总之就是要建立足弓并防止膝盖内扣，才能起到锻炼臀中小肌的效果。</p>
+]]></content>
+      <categories>
+        <category>Physical Training</category>
+      </categories>
+      <tags>
+        <tag>体能康复</tag>
+        <tag>力量举</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[体能康复]2.肩关节外旋受限</title>
+    <url>/2024/03/03/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-2-%E8%82%A9%E5%85%B3%E8%8A%82%E5%A4%96%E6%97%8B%E5%8F%97%E9%99%90/</url>
+    <content><![CDATA[<p>开始之前，先来谈谈什么是外旋：</p>
+<span id="more"></span>
+
+<div align=center>  <img src="1.jpg" width=60%> </div>
+
+
+<p>肩关节外旋受限是很多健身爱好者的通病。由于长期大容量和重量训练背阔肌和胸肌并且未进行充分的放松，同时缺乏小肌群如中下斜方肌和外旋肌群相关的训练，导致我们的肩关节外旋活动度受限。笔者则是出现了左右肩关节外旋活动度不一致的情况。</p>
+<p>可以根据下面的视频判断自己的肩关节活动度：<a href="https://www.bilibili.com/video/BV1ze4y1J7zw/?spm_id_from=333.337.search-card.all.click&vd_source=0d3600cfd55b70b38d9e3525843dbc46">如何改善手臂外旋，提高肩膀活动度_哔哩哔哩_bilibili</a>。注意检测时需要保证脊柱中立位，外旋时不可以通过胸椎或腰椎来代偿。具体而言是可以通过腹式呼吸吐气时强迫脊柱中立位同时进行外旋。</p>
+<p>改善思路及方案：<br>①放松胸肌和背阔肌及大小圆肌：包括拉伸和泡沫轴滚动<br>②锻炼外旋肌肉，网络上有很多教程，在这里我仅以站姿哑铃外旋作为一个例子。<br>③锻炼中下斜方肌。例如YTW，潘德雷划船和宽距的卧拉。</p>
+<h3 id="站姿哑铃外旋"><a href="#站姿哑铃外旋" class="headerlink" title="站姿哑铃外旋"></a>站姿哑铃外旋</h3><p>起始位置：臀部和胸廓贴紧墙壁，保持脊柱中立位，手腕中立位（在镜子中哑铃的角度会随着手掌的角度与水平面呈现约10°左右的夹角），收下巴，后脑勺靠近墙壁，肩膀三角肌后束贴紧墙壁，手肘呈90°，下沉肩胛骨，小臂与地面平行，腹式呼吸。</p>
+<p><strong>腹式呼吸缓缓吐气</strong>，这一点尤为重要，同时肩膀外旋，旋至最大限度时核心收紧，防止代偿。此时身体除了腰椎段少部分，几乎完全贴合于墙壁。然后再吸气返回。</p>
+<div align=center>  <img src="2.jpg" width=60%> </div>
+
+<p>可以看到，呼吸的作用十分重要！！！一定要学会呼吸！！！</p>
+]]></content>
+      <categories>
+        <category>Physical Training</category>
+      </categories>
+      <tags>
+        <tag>体能康复</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[体能康复]3.学会使用屈髋和伸髋</title>
+    <url>/2024/03/03/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-3-%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%B1%88%E9%AB%8B%E5%92%8C%E4%BC%B8%E9%AB%8B/</url>
+    <content><![CDATA[<p>屈髋和伸髋是所有有腿部参与的运动的基础，在力量举训练中，伸髋和屈髋十分重要。不同人不会屈髋的原因不同。对于我自己而言，由于长期的骨盆前倾，导致我的屈髋更像是撅屁股，这会在硬拉和深蹲中为腰部带来额外的压力，同时减少了臀部和大腿后侧链的参与。屈髋是什么可以参考这篇文章：<a href="https://zhuanlan.zhihu.com/p/29587961">健身时最重要也最容易被忽略的动作——屈髋 - 知乎 (zhihu.com)</a></p>
+<span id="more"></span>
+
+<p>改善思路及方案：<br>①单独练习屈髋和伸髋过程：如单独屈髋，硬拉前屈髋，屈髋位强化<br>②锻炼相关弱势肌肉群：如臀桥，单腿臀桥，直腿硬拉，壶铃摇摆</p>
+<p>下面介绍一下相关动作：</p>
+<h3 id="单腿站立提膝"><a href="#单腿站立提膝" class="headerlink" title="单腿站立提膝"></a>单腿站立提膝</h3><p>开始时单腿站立，确保支撑腿足弓建立良好，并且身体处于脊柱中立位（可照镜子确认，不要产生左右倾斜或左右旋）。大腿调整与地面平行后，再整体使脚部略往下降10-15厘米左右。利用腹式呼吸，吸满气。接着再吐气，保持脊柱和骨盆中立位置的情况下尽量往上提膝靠近胸口（注意此时胸部和颈椎容易向前探代偿，这是不对的）。然后吸气下放至原来位置，重复上述过程12次。会感到屈髋相关肌群十分酸胀。</p>
+<div align=center>  <img src="1.jpg" width=20%> </div>
+
+<h3 id="单侧屈髋滑步"><a href="#单侧屈髋滑步" class="headerlink" title="单侧屈髋滑步"></a>单侧屈髋滑步</h3><p>开始正常站立，通过腹式呼吸调整脊柱和核心，屈髋达到后侧有明显张力时，可稍微屈<code>一点点</code>膝盖维持稳定。重心调整至单腿上，此时支撑腿膝盖为了力的平衡显然会向外打开。此时要确保支撑腿足弓建立良好，并且身体处于脊柱中立位（可照镜子确认，不要产生左右倾斜或左右旋）。腹式呼吸吸气，然后吐气时，另一只脚仅仅脚尖着地（不受力），往斜后方滑，吸气时重新归位。<strong>注意不要有大腿前侧和腰部的明显受力</strong>。此时臀部和后侧链应该感受会十分强烈！</p>
+<div align=center>  <img src="2.jpg" width=40%> </div>
+
+<h3 id="臀桥及单腿臀桥"><a href="#臀桥及单腿臀桥" class="headerlink" title="臀桥及单腿臀桥"></a>臀桥及单腿臀桥</h3><p>网上的教程非常多了，例如<a href="https://zhuanlan.zhihu.com/p/86108012">经典动作解析 | 臀桥 - 知乎 (zhihu.com)</a>，讲的比较好。（不过仰卧单腿臀桥不必伸直另一条腿。）说几个网上没有的点和极其值得注意的点：<br>①脚离得身体越远（膝角约120°内），或者勾脚尖，可以有效增加臀部肌肉的参与率，但太远可能会损失行程。脚离得越近则大腿后侧链会参与更多。<br>②在地板上做臀桥一定要爆发地去做！一定要快！否则很难起到锻炼效果。<br>③利用爆发力做双腿臀桥时可以在两腿间夹一个泡沫轴，可以大大提高锻炼的效果！<br>④幅度一定要够，骨盆一定要送出去，不要用腰发力！</p>
+]]></content>
+      <categories>
+        <category>Physical Training</category>
+      </categories>
+      <tags>
+        <tag>体能康复</tag>
+        <tag>力量举</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[体能康复]4.如何拥有一个强大的脊柱</title>
+    <url>/2024/03/09/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-4-%E5%A6%82%E4%BD%95%E6%8B%A5%E6%9C%89%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84%E8%84%8A%E6%9F%B1/</url>
+    <content><![CDATA[<p>拥有一个强大的脊柱，意味着脊柱在冠状面和矢状面以及旋转时都拥有非凡的灵活度和稳定性。通过针对性训练可以逐步增强我们的脊柱，改善体态，提高运动表现。</p>
+<span id="more"></span>
+
+<h2 id="拉伸运动"><a href="#拉伸运动" class="headerlink" title="拉伸运动"></a>拉伸运动</h2><p>通过放松运动可以充分缓解我们的脊柱肌肉的紧张。动作千千万，细节最重要。在这里主要展示几个覆盖了脊柱上中下段的动作和重要细节。</p>
+<h3 id="猫式伸展"><a href="#猫式伸展" class="headerlink" title="猫式伸展"></a>猫式伸展</h3><p>准备姿势：首先是找寻支撑点。双脚与肩膀同宽，跪坐下去（如左图黑色所示），双手手肘与膝盖相连，小臂平行向前延伸出去，中指指尖的位置是我们做猫式时手掌根部所在的位置。将动作调整为左图中蓝色所示，即达到初始支撑点。而后如中图所示，手肘内旋，增强脊柱感受，手指抓地，减轻手腕压力，调整脊柱至中立位。</p>
+<p>骨盆后倾位伸展：从骨盆开始，将自己的脊柱想象成一段一段的，逐渐向上拱起，腹肌逐渐绷紧。拱起到颈椎时，头看向自己的肚脐眼。如果上一个动作是前倾位伸展，<strong>需要在脊柱拱起一直保持头部看向天花板</strong>，直至最后伸展至颈椎时再看向肚脐眼。</p>
+<p>骨盆前倾位伸展：从骨盆开始，将自己的脊柱想象成一段一段的，逐渐向下拱起，脊柱相关肌肉略微用力（不必过于紧张）。拱起到颈椎时，头看向天花板。如果上一个动作是后倾位伸展，<strong>需要在脊柱拱起一直保持头部看向肚脐眼</strong>，直至最后伸展至颈椎。</p>
+<p><img src="/2024/03/09/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-4-%E5%A6%82%E4%BD%95%E6%8B%A5%E6%9C%89%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84%E8%84%8A%E6%9F%B1/1.jpg" alt="1.jpg"></p>
+<h3 id="扭转拉伸"><a href="#扭转拉伸" class="headerlink" title="扭转拉伸"></a>扭转拉伸</h3><p>这里给出了俯视的角度</p>
+<p>准备姿势：自然平躺在地面上，脚部并拢，利用腹式呼吸吸满气。</p>
+<p>扭转：脚并拢的情况下两腿同时向一侧进行扭转，直至骨盆从水平位置完全变为竖直位；同时腹式呼吸吐气，头向另一侧扭转至最大处。<strong>注意</strong>：肩膀后束不要离开地面，头部注意收下巴，维持脊柱中立位。</p>
+<p>回位：腹式呼吸吸气，进行扭转过程的逆过程。</p>
+<p>腹斜肌，背阔肌，竖脊肌会有强烈的牵拉感。</p>
+<div align=center>  <img src="2.jpg" width=60%> </div>
+
+<h2 id="脊柱侧旋"><a href="#脊柱侧旋" class="headerlink" title="脊柱侧旋"></a>脊柱侧旋</h2><h3 id="斜上转体"><a href="#斜上转体" class="headerlink" title="斜上转体"></a>斜上转体</h3><p>（其实这个动作我也不知道叫什么qwq）。准备动作：如图坐在凳子上，髋角和膝角均为120°左右，（大腿并不一定保持平行于地面，保持平衡更重要），脊柱保持中立位，双手同时往前伸，下沉肩胛骨，进行腹式呼吸。</p>
+<p>吐气时转体。转体至最大角度时气体吐尽。此时可能会伴有强烈的颤抖（因为核心发力），且不同选手可能会因为左右侧不平衡导致左右转体幅度和劳累程度不相同。可以弱侧多做一组。吸气时转回。</p>
+<p>此动作核心会有极强的发力感，尤其是扭转相关肌群。可由辅助者辅助支撑。</p>
+<div align=center>  <img src="3.jpg" width=40%> </div>
+
+<h2 id="上交叉部位"><a href="#上交叉部位" class="headerlink" title="上交叉部位"></a>上交叉部位</h2><h3 id="颈屈肌和中下斜方"><a href="#颈屈肌和中下斜方" class="headerlink" title="颈屈肌和中下斜方"></a>颈屈肌和中下斜方</h3><p>收下巴，头往后伸，保持脊柱中立位（如果靠墙的话后脑勺，背部，屁股在一条线上）。可以使用弹力带向前施加一个力量去干扰头部，同时维持头部在脊柱中立位处的稳定，可以单独练习到颈屈肌。另一个做法是双手交叉抱头，代替弹力带施加压力。注意不要耸肩，结合腹式呼吸。这样能够同时锻炼到颈屈肌和中下斜方。</p>
+<div align=center>  <img src="4.jpg" width=80%> </div>]]></content>
+      <categories>
+        <category>Physical Training</category>
+      </categories>
+      <tags>
+        <tag>体能康复</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[力量训练]JTS训练体系</title>
+    <url>/2024/03/03/%E5%8A%9B%E9%87%8F%E8%AE%AD%E7%BB%83-JTS%E8%AE%AD%E7%BB%83%E4%BD%93%E7%B3%BB/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Powerlifting</category>
+      </categories>
+      <tags>
+        <tag>力量举</tag>
+        <tag>训练原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[力量训练]力速共轭训练体系</title>
+    <url>/2024/03/10/%E5%8A%9B%E9%87%8F%E8%AE%AD%E7%BB%83-%E5%8A%9B%E9%80%9F%E5%85%B1%E8%BD%AD%E8%AE%AD%E7%BB%83%E4%BD%93%E7%B3%BB/</url>
+    <content><![CDATA[<p>Science and Practice Training一书中写道力量训练所应该包括的模块分别是：dynamic动态，即极限速度训练；maximum极大值，即极限重量训练；repetition重复，即辅助训练。</p>
+<span id="more"></span>
+
+<div align=center>  <img src="1.png" width=20%> </div>
+
+<p>对于平凡、普通的力量举爱好者，其实主要是要注意两个深层的问题：<br>①<strong>在训练的同时避免伤病，以练防伤，均摊压力</strong><br>②<strong>在长期训练中管控好激情衰竭的问题</strong></p>
+<p><strong>力速共轭训练</strong>可能为为这两个问题提供一个新的思路。</p>
+<p>力速共轭训练正如前面所说共包含三个部分：极限速度训练、极限重量训练和辅助训练。</p>
+<h2 id="主项训练"><a href="#主项训练" class="headerlink" title="主项训练"></a>主项训练</h2><p>极限速度训练则是用ERM的特定百分比重量来进行训练，通常都是30%的45%，这就要求速度要快，爆发力要足，同时动作技巧要保持完美，他的训练目标是神经肌肉的协调和牵张反射，极限速度训练的强项是能极大的提高Rate of force development，也就是发力速率，说白了就是怎样在最短的时间里，把你浑身的劲儿全部使出来。极限速度训练和极限重量训练同向同速共轭并行的训练模式，就构成了力速共轭训练体系。</p>
+<p>对于追求力量的举者来说，周期性的使用大重量来训练也就势在必行了，只有通过：<br>①同时募集最大数量的快收缩肌和慢收缩机<br>②每个被募集的运动肌纤维都达到了强直的状态<br>③所有运动神经元在最大主动发力时，能够实现同步<br>这三点结合才能产生最大的肌肉力量，而这一切也几乎只有通过大重量的训练，才能达到，这也就是极限重量训练的目的。</p>
+<p>在力速共轭体系中，极限重量训练每周只做一次，这里说的极限重量训练，是指每组只做一次到五次的重量，如果频率大于每周一次的话，你会很明显地感觉到，你的中枢神经系统是无法恢复到敏锐状态的，更别说极大重量对于韧带肌腱，软组织和骨骼的损伤了，但一周只做一次深蹲，显然是无法让深蹲进步的，一周两次深蹲才更合适，超过两次很容易过度训练。</p>
+<p>那么一周之中，另外一次训练，就应该用次极限的重量来进行极高速度的训练。因为极限速度训练所募集的运动神经元，和极限重量训练非常相似，当你用高速移动轻重量时，它的效果与输出，和你用慢速移动大重量是很相似的，因为发力速率很接近（<strong>F &#x3D; m × a</strong>）。而速度日和大重量日之间的间隔，应该遵循72小时法则，相同的运动模式和同肌肉群损伤之间，必须留够72小时，你能练多很不重要，练完了能恢复才重要，极限重量训练和极限速度训练，共同决定了你的训练强度是多大。</p>
+<p>因此可以看出，力速共轭训练可以避免身体受损过多，同时减轻身体压力。</p>
+<p><em>笔者注</em>：<u>长期做85%乃至90%以上CFmm或1RM的训练事实上会摧残身心，这就是为什么西部杠铃在应用这套理论的同时会换用很多动作。但这可能会导致专项性不足。</u></p>
+<h2 id="辅助项训练"><a href="#辅助项训练" class="headerlink" title="辅助项训练"></a>辅助项训练</h2><p>辅助动作在力速共轭训练中决定了训练容量，目的是弥补薄弱环节。其动作形式的安排首先要提到两个原则：一个是适应性原则，Law of accommodation，一个是专项性原则，Law of specificity。适应性原则是指，如果一个运动员用同一种方法，和相同的负重来进行训练，那么训练时间越长，收获的效果就越差，专项性原则是指，如果一个运动员想使某一项运动持续提升，他就需要进行与这项运动高度相关，且具有针对性的训练。这两个原则是相悖的，但对于辅助动作而言，适应性会更加重要。</p>
+<p>因此辅助项动作选取时可以<strong>完全不重样</strong>：比如二头，可以哑铃弯举，牧师椅弯举，EZ杆弯举，或绑上弹力带等等。</p>
+<h2 id="热身——温宁热身法"><a href="#热身——温宁热身法" class="headerlink" title="热身——温宁热身法"></a>热身——温宁热身法</h2><p>温宁热身法通常选取三个动作，负重要轻，每个动作4×25次，用大循环的方式在15分钟之内完成三个热身。动作的选择也有讲究，第一个动作要针对今天训练主项的动作模式，进行热身，比如今天的主项是卧推，那么第一个热身项目就要选择很轻的哑铃，来预热卧推动作模式，而另外两个动作，主要针对的是短板肌群进行预热，比如三头和背阔肌，温宁热身法一样要遵循海量动作的大循环，其目的仍旧是均摊压力。</p>
+<h2 id="减载周"><a href="#减载周" class="headerlink" title="减载周"></a>减载周</h2><p>大重量日整体做功量减半（强度和容量同时减）。速度日只减少容量。</p>
+<p>参考资料：<a href="https://www.bilibili.com/video/BV1Qv421k748/?spm_id_from=333.999.0.0">平凡力量爱好者的终生训练良伴——力速共轭训练体系</a></p>
+]]></content>
+      <categories>
+        <category>Powerlifting</category>
+      </categories>
+      <tags>
+        <tag>力量举</tag>
+        <tag>训练原理</tag>
       </tags>
   </entry>
   <entry>
@@ -200,399 +560,39 @@
       </tags>
   </entry>
   <entry>
-    <title>[从0开始写出科学计算并行程序]1.C++文件读取</title>
-    <url>/2024/03/18/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%86%99%E5%87%BA%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%B9%B6%E8%A1%8C%E7%A8%8B%E5%BA%8F-1-C-%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>[力量训练]力速共轭训练体系</title>
-    <url>/2024/03/10/%E5%8A%9B%E9%87%8F%E8%AE%AD%E7%BB%83-%E5%8A%9B%E9%80%9F%E5%85%B1%E8%BD%AD%E8%AE%AD%E7%BB%83%E4%BD%93%E7%B3%BB/</url>
-    <content><![CDATA[<p>Science and Practice Training一书中写道力量训练所应该包括的模块分别是：dynamic动态，即极限速度训练；maximum极大值，即极限重量训练；repetition重复，即辅助训练。</p>
-<span id="more"></span>
-
-<div align=center>  <img src="1.png" width=20%> </div>
-
-<p>对于平凡、普通的力量举爱好者，其实主要是要注意两个深层的问题：<br>①<strong>在训练的同时避免伤病，以练防伤，均摊压力</strong><br>②<strong>在长期训练中管控好激情衰竭的问题</strong></p>
-<p><strong>力速共轭训练</strong>可能为为这两个问题提供一个新的思路。</p>
-<p>力速共轭训练正如前面所说共包含三个部分：极限速度训练、极限重量训练和辅助训练。</p>
-<h2 id="主项训练"><a href="#主项训练" class="headerlink" title="主项训练"></a>主项训练</h2><p>极限速度训练则是用ERM的特定百分比重量来进行训练，通常都是30%的45%，这就要求速度要快，爆发力要足，同时动作技巧要保持完美，他的训练目标是神经肌肉的协调和牵张反射，极限速度训练的强项是能极大的提高Rate of force development，也就是发力速率，说白了就是怎样在最短的时间里，把你浑身的劲儿全部使出来。极限速度训练和极限重量训练同向同速共轭并行的训练模式，就构成了力速共轭训练体系。</p>
-<p>对于追求力量的举者来说，周期性的使用大重量来训练也就势在必行了，只有通过：<br>①同时募集最大数量的快收缩肌和慢收缩机<br>②每个被募集的运动肌纤维都达到了强直的状态<br>③所有运动神经元在最大主动发力时，能够实现同步<br>这三点结合才能产生最大的肌肉力量，而这一切也几乎只有通过大重量的训练，才能达到，这也就是极限重量训练的目的。</p>
-<p>在力速共轭体系中，极限重量训练每周只做一次，这里说的极限重量训练，是指每组只做一次到五次的重量，如果频率大于每周一次的话，你会很明显地感觉到，你的中枢神经系统是无法恢复到敏锐状态的，更别说极大重量对于韧带肌腱，软组织和骨骼的损伤了，但一周只做一次深蹲，显然是无法让深蹲进步的，一周两次深蹲才更合适，超过两次很容易过度训练。</p>
-<p>那么一周之中，另外一次训练，就应该用次极限的重量来进行极高速度的训练。因为极限速度训练所募集的运动神经元，和极限重量训练非常相似，当你用高速移动轻重量时，它的效果与输出，和你用慢速移动大重量是很相似的，因为发力速率很接近（<strong>F &#x3D; m × a</strong>）。而速度日和大重量日之间的间隔，应该遵循72小时法则，相同的运动模式和同肌肉群损伤之间，必须留够72小时，你能练多很不重要，练完了能恢复才重要，极限重量训练和极限速度训练，共同决定了你的训练强度是多大。</p>
-<p>因此可以看出，力速共轭训练可以避免身体受损过多，同时减轻身体压力。</p>
-<p><em>笔者注</em>：<u>长期做85%乃至90%以上CFmm或1RM的训练事实上会摧残身心，这就是为什么西部杠铃在应用这套理论的同时会换用很多动作。但这可能会导致专项性不足。</u></p>
-<h2 id="辅助项训练"><a href="#辅助项训练" class="headerlink" title="辅助项训练"></a>辅助项训练</h2><p>辅助动作在力速共轭训练中决定了训练容量，目的是弥补薄弱环节。其动作形式的安排首先要提到两个原则：一个是适应性原则，Law of accommodation，一个是专项性原则，Law of specificity。适应性原则是指，如果一个运动员用同一种方法，和相同的负重来进行训练，那么训练时间越长，收获的效果就越差，专项性原则是指，如果一个运动员想使某一项运动持续提升，他就需要进行与这项运动高度相关，且具有针对性的训练。这两个原则是相悖的，但对于辅助动作而言，适应性会更加重要。</p>
-<p>因此辅助项动作选取时可以<strong>完全不重样</strong>：比如二头，可以哑铃弯举，牧师椅弯举，EZ杆弯举，或绑上弹力带等等。</p>
-<h2 id="热身——温宁热身法"><a href="#热身——温宁热身法" class="headerlink" title="热身——温宁热身法"></a>热身——温宁热身法</h2><p>温宁热身法通常选取三个动作，负重要轻，每个动作4×25次，用大循环的方式在15分钟之内完成三个热身。动作的选择也有讲究，第一个动作要针对今天训练主项的动作模式，进行热身，比如今天的主项是卧推，那么第一个热身项目就要选择很轻的哑铃，来预热卧推动作模式，而另外两个动作，主要针对的是短板肌群进行预热，比如三头和背阔肌，温宁热身法一样要遵循海量动作的大循环，其目的仍旧是均摊压力。</p>
-<h2 id="减载周"><a href="#减载周" class="headerlink" title="减载周"></a>减载周</h2><p>大重量日整体做功量减半（强度和容量同时减）。速度日只减少容量。</p>
-<p>参考资料：<a href="https://www.bilibili.com/video/BV1Qv421k748/?spm_id_from=333.999.0.0">平凡力量爱好者的终生训练良伴——力速共轭训练体系</a></p>
-]]></content>
-      <categories>
-        <category>Powerlifting</category>
-      </categories>
-      <tags>
-        <tag>力量举</tag>
-        <tag>训练原理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[体能康复]4.如何拥有一个强大的脊柱</title>
-    <url>/2024/03/09/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-4-%E5%A6%82%E4%BD%95%E6%8B%A5%E6%9C%89%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84%E8%84%8A%E6%9F%B1/</url>
-    <content><![CDATA[<p>拥有一个强大的脊柱，意味着脊柱在冠状面和矢状面以及旋转时都拥有非凡的灵活度和稳定性。通过针对性训练可以逐步增强我们的脊柱，改善体态，提高运动表现。</p>
-<span id="more"></span>
-
-<h2 id="拉伸运动"><a href="#拉伸运动" class="headerlink" title="拉伸运动"></a>拉伸运动</h2><p>通过放松运动可以充分缓解我们的脊柱肌肉的紧张。动作千千万，细节最重要。在这里主要展示几个覆盖了脊柱上中下段的动作和重要细节。</p>
-<h3 id="猫式伸展"><a href="#猫式伸展" class="headerlink" title="猫式伸展"></a>猫式伸展</h3><p>准备姿势：首先是找寻支撑点。双脚与肩膀同宽，跪坐下去（如左图黑色所示），双手手肘与膝盖相连，小臂平行向前延伸出去，中指指尖的位置是我们做猫式时手掌根部所在的位置。将动作调整为左图中蓝色所示，即达到初始支撑点。而后如中图所示，手肘内旋，增强脊柱感受，手指抓地，减轻手腕压力，调整脊柱至中立位。</p>
-<p>骨盆后倾位伸展：从骨盆开始，将自己的脊柱想象成一段一段的，逐渐向上拱起，腹肌逐渐绷紧。拱起到颈椎时，头看向自己的肚脐眼。如果上一个动作是前倾位伸展，<strong>需要在脊柱拱起一直保持头部看向天花板</strong>，直至最后伸展至颈椎时再看向肚脐眼。</p>
-<p>骨盆前倾位伸展：从骨盆开始，将自己的脊柱想象成一段一段的，逐渐向下拱起，脊柱相关肌肉略微用力（不必过于紧张）。拱起到颈椎时，头看向天花板。如果上一个动作是后倾位伸展，<strong>需要在脊柱拱起一直保持头部看向肚脐眼</strong>，直至最后伸展至颈椎。</p>
-<p><img src="/2024/03/09/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-4-%E5%A6%82%E4%BD%95%E6%8B%A5%E6%9C%89%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84%E8%84%8A%E6%9F%B1/1.jpg" alt="1.jpg"></p>
-<h3 id="扭转拉伸"><a href="#扭转拉伸" class="headerlink" title="扭转拉伸"></a>扭转拉伸</h3><p>这里给出了俯视的角度</p>
-<p>准备姿势：自然平躺在地面上，脚部并拢，利用腹式呼吸吸满气。</p>
-<p>扭转：脚并拢的情况下两腿同时向一侧进行扭转，直至骨盆从水平位置完全变为竖直位；同时腹式呼吸吐气，头向另一侧扭转至最大处。<strong>注意</strong>：肩膀后束不要离开地面，头部注意收下巴，维持脊柱中立位。</p>
-<p>回位：腹式呼吸吸气，进行扭转过程的逆过程。</p>
-<p>腹斜肌，背阔肌，竖脊肌会有强烈的牵拉感。</p>
-<div align=center>  <img src="2.jpg" width=60%> </div>
-
-<h2 id="脊柱侧旋"><a href="#脊柱侧旋" class="headerlink" title="脊柱侧旋"></a>脊柱侧旋</h2><h3 id="斜上转体"><a href="#斜上转体" class="headerlink" title="斜上转体"></a>斜上转体</h3><p>（其实这个动作我也不知道叫什么qwq）。准备动作：如图坐在凳子上，髋角和膝角均为120°左右，（大腿并不一定保持平行于地面，保持平衡更重要），脊柱保持中立位，双手同时往前伸，下沉肩胛骨，进行腹式呼吸。</p>
-<p>吐气时转体。转体至最大角度时气体吐尽。此时可能会伴有强烈的颤抖（因为核心发力），且不同选手可能会因为左右侧不平衡导致左右转体幅度和劳累程度不相同。可以弱侧多做一组。吸气时转回。</p>
-<p>此动作核心会有极强的发力感，尤其是扭转相关肌群。可由辅助者辅助支撑。</p>
-<div align=center>  <img src="3.jpg" width=40%> </div>
-
-<h2 id="上交叉部位"><a href="#上交叉部位" class="headerlink" title="上交叉部位"></a>上交叉部位</h2><h3 id="颈屈肌和中下斜方"><a href="#颈屈肌和中下斜方" class="headerlink" title="颈屈肌和中下斜方"></a>颈屈肌和中下斜方</h3><p>收下巴，头往后伸，保持脊柱中立位（如果靠墙的话后脑勺，背部，屁股在一条线上）。可以使用弹力带向前施加一个力量去干扰头部，同时维持头部在脊柱中立位处的稳定，可以单独练习到颈屈肌。另一个做法是双手交叉抱头，代替弹力带施加压力。注意不要耸肩，结合腹式呼吸。这样能够同时锻炼到颈屈肌和中下斜方。</p>
-<div align=center>  <img src="4.jpg" width=80%> </div>]]></content>
-      <categories>
-        <category>Physical Training</category>
-      </categories>
-      <tags>
-        <tag>体能康复</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Linux脚本]移入回收站和清除</title>
-    <url>/2024/03/08/Linux%E7%B3%BB%E7%BB%9F%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/</url>
-    <content><![CDATA[<p>通过直接在Linux系统中编写一些快捷脚本，可以大大加快我们的工作速度。</p>
-<span id="more"></span>
-
-<p>在这里我写一个具有“回收站”功能的脚本delete.sh，把它转换成一个自定义的linux命令叫dl，能够删除所指定的文件到某个“回收站”。另外，还写一个“清空回收站”的linux命令叫cl。</p>
-<p>脚本编写时遇见了几个坑点：<br>•  使用fish操纵terminal时，重新部署<code>~/.bashrc</code>文件要记得将fish文件给关闭，否则会报错<br>•  不同系统的回收站位置不一样！有的是在<code>~/recyclebin</code>，而在ubuntu22.04系统上回收站的位置在<code>~/.local/share/Trash/files</code>下</p>
-<p>首先创造一个脚本，我选择的目录是<code>~/local/bin</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim delete.sh</span><br></pre></td></tr></table></figure>
-
-<p>然后在delete.sh写入下面的内容（$1表示第一个参数 $*表示所有参数 $0表示文件名 $#表示参数个数），然后保存并退出:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Running <span class="variable">$0</span> ...&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Move <span class="variable">$#</span> files to recyclebin.&quot;</span></span><br><span class="line"><span class="built_in">mv</span> $* -t ~/.local/share/Trash/files/</span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
-
-<p>接着为脚本添加执行权限：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x delete.sh</span><br></pre></td></tr></table></figure>
-
-<p>然后打开~&#x2F;.bashrc文件:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure>
-
-<p>在文件结尾处添加:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> dl=<span class="string">&#x27;/usr/local/bin/delete.sh&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> cl=<span class="string">&#x27;rm -rf ~/.local/share/Trash/files *&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>然后保存并退出。</p>
-<p>重新配置bash：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-
-<p>然后就可以使用了！</p>
-<p><img src="/2024/03/08/Linux%E7%B3%BB%E7%BB%9F%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/1.png" alt="1.png"></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Script</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[力量训练]JTS训练体系</title>
-    <url>/2024/03/03/%E5%8A%9B%E9%87%8F%E8%AE%AD%E7%BB%83-JTS%E8%AE%AD%E7%BB%83%E4%BD%93%E7%B3%BB/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Powerlifting</category>
-      </categories>
-      <tags>
-        <tag>力量举</tag>
-        <tag>训练原理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[体能康复]3.学会使用屈髋和伸髋</title>
-    <url>/2024/03/03/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-3-%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%B1%88%E9%AB%8B%E5%92%8C%E4%BC%B8%E9%AB%8B/</url>
-    <content><![CDATA[<p>屈髋和伸髋是所有有腿部参与的运动的基础，在力量举训练中，伸髋和屈髋十分重要。不同人不会屈髋的原因不同。对于我自己而言，由于长期的骨盆前倾，导致我的屈髋更像是撅屁股，这会在硬拉和深蹲中为腰部带来额外的压力，同时减少了臀部和大腿后侧链的参与。屈髋是什么可以参考这篇文章：<a href="https://zhuanlan.zhihu.com/p/29587961">健身时最重要也最容易被忽略的动作——屈髋 - 知乎 (zhihu.com)</a></p>
-<span id="more"></span>
-
-<p>改善思路及方案：<br>①单独练习屈髋和伸髋过程：如单独屈髋，硬拉前屈髋，屈髋位强化<br>②锻炼相关弱势肌肉群：如臀桥，单腿臀桥，直腿硬拉，壶铃摇摆</p>
-<p>下面介绍一下相关动作：</p>
-<h3 id="单腿站立提膝"><a href="#单腿站立提膝" class="headerlink" title="单腿站立提膝"></a>单腿站立提膝</h3><p>开始时单腿站立，确保支撑腿足弓建立良好，并且身体处于脊柱中立位（可照镜子确认，不要产生左右倾斜或左右旋）。大腿调整与地面平行后，再整体使脚部略往下降10-15厘米左右。利用腹式呼吸，吸满气。接着再吐气，保持脊柱和骨盆中立位置的情况下尽量往上提膝靠近胸口（注意此时胸部和颈椎容易向前探代偿，这是不对的）。然后吸气下放至原来位置，重复上述过程12次。会感到屈髋相关肌群十分酸胀。</p>
-<div align=center>  <img src="1.jpg" width=20%> </div>
-
-<h3 id="单侧屈髋滑步"><a href="#单侧屈髋滑步" class="headerlink" title="单侧屈髋滑步"></a>单侧屈髋滑步</h3><p>开始正常站立，通过腹式呼吸调整脊柱和核心，屈髋达到后侧有明显张力时，可稍微屈<code>一点点</code>膝盖维持稳定。重心调整至单腿上，此时支撑腿膝盖为了力的平衡显然会向外打开。此时要确保支撑腿足弓建立良好，并且身体处于脊柱中立位（可照镜子确认，不要产生左右倾斜或左右旋）。腹式呼吸吸气，然后吐气时，另一只脚仅仅脚尖着地（不受力），往斜后方滑，吸气时重新归位。<strong>注意不要有大腿前侧和腰部的明显受力</strong>。此时臀部和后侧链应该感受会十分强烈！</p>
-<div align=center>  <img src="2.jpg" width=40%> </div>
-
-<h3 id="臀桥及单腿臀桥"><a href="#臀桥及单腿臀桥" class="headerlink" title="臀桥及单腿臀桥"></a>臀桥及单腿臀桥</h3><p>网上的教程非常多了，例如<a href="https://zhuanlan.zhihu.com/p/86108012">经典动作解析 | 臀桥 - 知乎 (zhihu.com)</a>，讲的比较好。（不过仰卧单腿臀桥不必伸直另一条腿。）说几个网上没有的点和极其值得注意的点：<br>①脚离得身体越远（膝角约120°内），或者勾脚尖，可以有效增加臀部肌肉的参与率，但太远可能会损失行程。脚离得越近则大腿后侧链会参与更多。<br>②在地板上做臀桥一定要爆发地去做！一定要快！否则很难起到锻炼效果。<br>③利用爆发力做双腿臀桥时可以在两腿间夹一个泡沫轴，可以大大提高锻炼的效果！<br>④幅度一定要够，骨盆一定要送出去，不要用腰发力！</p>
-]]></content>
-      <categories>
-        <category>Physical Training</category>
-      </categories>
-      <tags>
-        <tag>体能康复</tag>
-        <tag>力量举</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[体能康复]2.肩关节外旋受限</title>
-    <url>/2024/03/03/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-2-%E8%82%A9%E5%85%B3%E8%8A%82%E5%A4%96%E6%97%8B%E5%8F%97%E9%99%90/</url>
-    <content><![CDATA[<p>开始之前，先来谈谈什么是外旋：</p>
-<span id="more"></span>
-
-<div align=center>  <img src="1.jpg" width=60%> </div>
-
-
-<p>肩关节外旋受限是很多健身爱好者的通病。由于长期大容量和重量训练背阔肌和胸肌并且未进行充分的放松，同时缺乏小肌群如中下斜方肌和外旋肌群相关的训练，导致我们的肩关节外旋活动度受限。笔者则是出现了左右肩关节外旋活动度不一致的情况。</p>
-<p>可以根据下面的视频判断自己的肩关节活动度：<a href="https://www.bilibili.com/video/BV1ze4y1J7zw/?spm_id_from=333.337.search-card.all.click&vd_source=0d3600cfd55b70b38d9e3525843dbc46">如何改善手臂外旋，提高肩膀活动度_哔哩哔哩_bilibili</a>。注意检测时需要保证脊柱中立位，外旋时不可以通过胸椎或腰椎来代偿。具体而言是可以通过腹式呼吸吐气时强迫脊柱中立位同时进行外旋。</p>
-<p>改善思路及方案：<br>①放松胸肌和背阔肌及大小圆肌：包括拉伸和泡沫轴滚动<br>②锻炼外旋肌肉，网络上有很多教程，在这里我仅以站姿哑铃外旋作为一个例子。<br>③锻炼中下斜方肌。例如YTW，潘德雷划船和宽距的卧拉。</p>
-<h3 id="站姿哑铃外旋"><a href="#站姿哑铃外旋" class="headerlink" title="站姿哑铃外旋"></a>站姿哑铃外旋</h3><p>起始位置：臀部和胸廓贴紧墙壁，保持脊柱中立位，手腕中立位（在镜子中哑铃的角度会随着手掌的角度与水平面呈现约10°左右的夹角），收下巴，后脑勺靠近墙壁，肩膀三角肌后束贴紧墙壁，手肘呈90°，下沉肩胛骨，小臂与地面平行，腹式呼吸。</p>
-<p><strong>腹式呼吸缓缓吐气</strong>，这一点尤为重要，同时肩膀外旋，旋至最大限度时核心收紧，防止代偿。此时身体除了腰椎段少部分，几乎完全贴合于墙壁。然后再吸气返回。</p>
-<div align=center>  <img src="2.jpg" width=60%> </div>
-
-<p>可以看到，呼吸的作用十分重要！！！一定要学会呼吸！！！</p>
-]]></content>
-      <categories>
-        <category>Physical Training</category>
-      </categories>
-      <tags>
-        <tag>体能康复</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[体能康复]1.力量举选手也会核心过弱？</title>
-    <url>/2024/03/03/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-1-%E5%8A%9B%E9%87%8F%E4%B8%BE%E9%80%89%E6%89%8B%E4%B9%9F%E4%BC%9A%E6%A0%B8%E5%BF%83%E8%BF%87%E5%BC%B1%EF%BC%9F/</url>
-    <content><![CDATA[<p>回答标题的提问之前，我们需要知道什么是<strong>核心</strong>。核心肌群如下图所示：</p>
-<span id="more"></span>
-
-<div align=center>  <img src="1.jpg" width=60%> </div>
-
-<p>对于一个力量举选手而言由于长期的硬拉训练，他的竖脊肌一般会很发达；然而由于现代人不可避免的久坐，他的髂腰肌和臀中小肌难免无力，若是再加上呼吸习惯不佳，会导致他出现骨盆前倾。而骨盆前倾则会导致一系列问题，包括腰部的持续紧张，腰围增大，膝盖内扣，足弓塌陷。对于力量举选手而言，久坐虽然不会产生明显的腰痛，但会显著增加运动损伤的风险，同时降低运动表现能力。</p>
-<p>下面列出了几种不需要特殊器械的训练方式。注意：<u>长期持续的训练更加重要</u>，建议两天进行一次训练，几周即可出现明显效果。</p>
-<h2 id="呼吸训练"><a href="#呼吸训练" class="headerlink" title="呼吸训练"></a>呼吸训练</h2><p>通过恰当的呼吸训练，能够激活横膈膜肌，骨盆底肌群，腹部深层肌群，从而将骨盆前端上提，减小腰围，同时下降胸廓，缓解肋骨外翻。</p>
-<h3 id="仰卧腹式呼吸"><a href="#仰卧腹式呼吸" class="headerlink" title="仰卧腹式呼吸"></a>仰卧腹式呼吸</h3><p>准备动作：训练者平躺在地板上，使脊柱处于中立位，略微下沉肩胛骨，全身放松，注意收下巴确保颈椎也处于中立位。<br><font color=Red>吸气</font>：使用鼻子平缓吸气（2-3s），吸到腹腔里。肚子向四面八方撑开，能感受到腹斜肌，腹直肌发力。注意身体其它位置放松，头不要乱动，不要耸肩，胸腔可以进气但不要过于扩张。<br><font color=Blue>吐气</font>：使用鼻子嘴巴平缓吐气（2-3s），可以发出“哈”的声音，注意是一声，并且可以过喉咙，嘴巴可以张大一些，吐尽腹部的气体。感受骨盆底肌，腹斜肌，腹横肌，腹直肌，横膈膜肌的收缩。具体而言，骨盆底肌感受是上小便时用力，腹斜肌和腹横肌用手指轻按会感到明显收紧并呈现丝状，横膈膜肌收缩时能用手感受到胸廓和肋骨下压，整体会感受到腰椎曲度变小，几乎完全贴合地面，骨盆会从前倾位向后倾位翻转。<br>重复10至12次，开始时可进行4组，适应后可以进行后面的进阶训练。</p>
-<div align=center>  <img src="仰卧呼吸.jpg" width=30%> </div>
-
-<h3 id="死虫式"><a href="#死虫式" class="headerlink" title="死虫式"></a>死虫式</h3><p>准备动作：训练者以如图所示的姿势平躺在地面上。注意髋角，膝角均为90°，勾脚尖，两腿之间的间隔为一拳距离，脊柱保持中立位，略微下沉肩胛骨，全身放松，注意收下巴确保颈椎也处于中立位。这种动作可以对着镜子，或者录像，或者找一个辅助者来进行规范。<br>吸气与呼气动作与仰卧腹式呼吸过程相同。<br>注意<strong>腰部不要有酸胀感</strong>，否则应该调整动作或进行退阶训练。</p>
-<div align=center>  <img src="死虫式.jpg" width=50%> </div>
-
-<p>进阶练习：找一位辅助者对你进行微扰，比如轻轻拨或拉你的腿或手，训练者在维持标准动作和呼吸不变的情况下进行对抗，以达到增强深层核心对抗能力。</p>
-<h3 id="反向鸟狗式"><a href="#反向鸟狗式" class="headerlink" title="反向鸟狗式"></a>反向鸟狗式</h3><p>准备动作：与死虫式相同。<br>吐气过程中，同侧腿和同侧手打开伸直，另一侧的腿和手不动。下放到底部时吐气完全，核心收紧，腰部几乎不受力。可能会出现颤抖的情况，属于正常现象。<br>吸气过程中，同侧腿和同侧手同时收回，吸满气时回到标准的死虫式。<br>重复上述过程总共12次。<br>注意<strong>腰部不要有酸胀感</strong>，否则应该调整动作或进行退阶训练。</p>
-<div align=center>  <img src="鸟狗式.jpg" width=35%> </div>
-
-<h2 id="髂腰肌训练"><a href="#髂腰肌训练" class="headerlink" title="髂腰肌训练"></a>髂腰肌训练</h2><p>可以辅助骨盆前倾位回到正常位置。</p>
-<h3 id="僵虫式"><a href="#僵虫式" class="headerlink" title="僵虫式"></a>僵虫式</h3><p>准备动作：与死虫式相似，区别在于下压脚尖（不用特别紧张地绷脚尖）<br>吐气过程中，单侧腿往下放，<strong>注意维持膝角不变，只改变髋角</strong>，直至大脚拇指尖触地，此时核心恰好完全收紧。<br>吸气过程中，单侧腿往上提，注意维持膝角不变，只改变髋角，吸满气时回到标准的死虫式。然后换边交替训练。<br>左右重复共12次，训练过程中会出现髂腰肌的明显酸胀感，属于正常现象。髂腰肌过于紧张时可进行蛇伸展式拉伸。每组训练完后可站立行走放松。</p>
-<div align=center>  <img src="僵虫式.jpg" width=35%> </div>
-
-<h2 id="臀中小肌训练"><a href="#臀中小肌训练" class="headerlink" title="臀中小肌训练"></a>臀中小肌训练</h2><p>可以有效改善膝盖内扣，同时增强伸髋力量。</p>
-<h3 id="蚌式开合"><a href="#蚌式开合" class="headerlink" title="蚌式开合"></a>蚌式开合</h3><p>准备动作：如图所示侧躺。<strong>勾脚尖，脚后跟，臀部，颈椎呈三点一线。</strong>保持脊柱中立位，收下巴。弹力带可有可无。可让辅助者帮你调整动作。<br>吐气过程中，单侧腿缓慢打开至最大处，注意保持两脚贴紧，骨盆一直垂直于地面（开始时可由辅助者进行提示），不要左右翻转，丧失平衡。<br>吸气过程中，缓慢回到准备动作初始位置，腹式呼吸将气吸满。<br>左右重复共12次，训练过程中会出现臀中肌和臀小肌的明显酸胀感伴有顶峰收缩时颤抖，属于正常现象。每组训练完后可站立行走放松。</p>
-<div align=center>  <img src="蚌式开合.jpg" width=100%> </div>
-
-<h3 id="臀桥"><a href="#臀桥" class="headerlink" title="臀桥"></a>臀桥</h3><p>这个训练主要放在后面的屈髋和伸髋中进行讲解。</p>
-<h3 id="分腿蹲及变式"><a href="#分腿蹲及变式" class="headerlink" title="分腿蹲及变式"></a>分腿蹲及变式</h3><p>这个训练方式就特别多了，比如保加利亚深蹲和箭步蹲。总之就是要建立足弓并防止膝盖内扣，才能起到锻炼臀中小肌的效果。</p>
-]]></content>
-      <categories>
-        <category>Physical Training</category>
-      </categories>
-      <tags>
-        <tag>体能康复</tag>
-        <tag>力量举</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[体能康复]0.我为什么要做体能康复</title>
-    <url>/2024/03/03/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-0-%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%81%9A%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D/</url>
-    <content><![CDATA[<p style="text-indent:2em">作为一名狂热的运动爱好者以及~自诩的~力量举运动员，我常常问自己喜欢运动的内因是什么，这些内因之间的重要性排序是什么，以及我能通过何种方式去满足这些需求？
+    <title>SiteAF3: Accurate Site-specific Folding via Conditional Diffusion Based on Alphafold3</title>
+    <url>/2025/07/27/SiteAF3/</url>
+    <content><![CDATA[<p style="text-indent:2em">Accurate structure prediction of biomolecular complexes is crucial for understanding biological processes and enabling drug discovery. While AlphaFold3 represents a significant advancement, enhancing its accuracy for specific binding sites remains a challenge. We present SiteAF3, a novel method for accurate site-specific folding via conditional diffusion, built upon the AlphaFold3 framework. SiteAF3 refines the diffusion process by fixing the receptor structure and optionally incorporating binding pocket and hotspot residue information. Comprehensive evaluations on protein-small molecule, protein-peptide, and protein-nucleic acid datasets demonstrate that SiteAF3 consistently outperforms AlphaFold3, achieving higher accuracy in complex structure prediction especially for orphan proteins and allosteric ligands, with reduced computational cost. SiteAF3 offers a user-friendly plug-in compatible with AlphaFold3, providing a valuable tool for more accurate modeling of biomolecular interactions.. 
 
 <span id="more"></span>
 
-<p style="text-indent:2em">首先，恐怕要让大家失望了，排在第一位的绝不是健康！而是快乐！如果只是健康，那就应该大部分时间躺在床上，多做做有氧，拉伸拉伸，少上班XD。那么运动时什么会让人感到快乐呢？战胜以前的自己，克服一个以前完成不了的重量，打败对手，濒临死亡，忍受肉体的痛苦，挑战极限，炫技等等都能使自己感到快乐。
+<p><img src="/2025/07/27/SiteAF3/1.png" alt="1"></p>
+<p style="text-indent:2em">The overall architecture of SiteAF3 (Fig. 1a) mirrors that of AlphaFold3 (AF3), inheriting AF3's inference workflow, which comprises four primary components: the input preparation, the representation learning, the structure prediction, and the confidence assessment. Our main divergences from AF3 lie in two key aspects: firstly, the structure prediction module employs a novel conditional diffusion model, and secondly, the representation learning incorporates additional binding pocket and hotspot residue information via the MSA module.
 
-<p style="text-indent:2em">其次，作为一名~自诩的~运动员，更好的运动成绩始终是我追求的目标。聊天的时候，兔兔和壳哥都对我说过类似的话，如果你以运动员自居，那你的目标就应当是世界最强。比如90公斤级就应该拉350公斤，蹲300公斤，推200公斤。当你在比赛规则下达到这个水平时，没人会在意你使用了何种技术和训练方法。
+<p style="text-indent:2em">In diffusion process, the atomic coordinates of the ligand are initialized with noise based on a Gaussian distribution centered around the pocket center with a specified radius, while the relative atomic coordinates of the receptor are directly fixed. Another different point is situated within the second sequence local attention block, where SiteAF3 introduces a mask to update only the coordinates of the ligand.
 
-<p style="text-indent:2em">然后，才是健康。如何更加安全地去提高自己的水平？以前受过的旧伤如何进行康复？先前养成的错误形体习惯如何纠正？
+<p style="text-indent:2em">In our initial explorations with the base SiteAF3 model, we observed that despite the noise initialization of ligand atomic coordinates was around the pocket, the predicted ligand binding occurred at a site distant from the intended pocket occasionally. To address this issue, we first used genetic searching tools in AF3 to get templates for MSA module to evaluate how much binding pocket information can be learned. We then experimented with directly embedding information about designated hotspot and pocket residues via the MSA module. These strategies led to a substantial improvement in the accuracy of the model's predictions, effectively guiding the ligand towards the desired binding site. However, we observed that MSA may introduce wrong binding site bias. We then used pocket information to mask full-length MSA templates after alignment to minimize the misleading impact as much as possible. Through pocket-masked AF3 MSA, SiteAF3 demonstrated a significant improvement on the pocket-well-defined protein-ligand dataset.
 
-<p style="text-indent:2em">最后，还有各种各样杂七杂八的因素，比如外貌和所谓的精气神之类的，但重要性于我而言占比不超过10%，就不在此细说。
+<img src="2.png" alt="2" style="width:400px;">
 
-<p style="text-indent:2em">我自己而言，其实是到了初中三年级才开始热爱锻炼（最开始是因为体考hhh）。当时174厘米的身高一下瘦到了65公斤，运动表现得到了巨量提升（主要是有氧，1000米进了3分钟，3000米也只需要11分出头）。小时候也进行过~微量~锻炼，主要是乒乓球和羽毛球dddd（其实没啥用）。上高中时迷上了踢足球，几乎天天练1小时，同时也做一些简单的家庭健身。上大学一年级时，踢比赛高速带球时被人推了一下，左腿腓肠肌受伤，丧失了加速和突然刹车的能力，修养了半年，这期间正式在健身房规律训练（~虽然不一定科学~）。开始时玩儿街健，结果做双力臂时把肩膀拉伤了。不得不又瞎练了一段时间，感觉自己的训练很划水，不科学，并且卧推遇到了瓶颈期。大二下机缘巧合刷到了力量举视频，遂于大二暑假练入了力量举的大坑。大三下报了柔道课，然后某次在社团中于某重20公斤于我的加拿大朋友进行实战，然后左腿内测副韧带断裂（是真的`惨`！），然后两个月没练腿。同时开启卧推专项计划，企图使自己的卧推暴涨到120，结果在使用弹弓时右手手肘三头拉伤（血泪啊！！！）后面去美国暑期访学，又划了两个月，肘伤才好。后面准备PKUfitness五四力量挑战赛时，又发现自己左右侧身体肌肉严重不平衡这一现象，这与我长期进行非对称运动密切相关。
+<p style="text-indent:2em">MSA may introduce wrong binding site bias on unseen protein and ligands. 
 
-<p style="text-indent:2em">身边有不少朋友训练水平很高，却依然受伤，也有韧带全断选手拿下级别冠和腰突选手创造全国纪录。我开始意识到，我对身体的了解和掌控实在是太粗浅了。要想长期快乐地运动，实现自己的运动目标，提高自己的运动表现，并且也是为了自己的健康甚至是外貌考虑，我应该全面开发自己身体的基础能力。这就是我学习体能康复的原因。]]></content>
-      <categories>
-        <category>Physical Training</category>
-      </categories>
-      <tags>
-        <tag>体能康复</tag>
-        <tag>力量举</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Covalent Radiopharmaceuticals</title>
-    <url>/2024/03/01/Covalent-Radiopharmaceuticals/</url>
-    <content><![CDATA[<p style="text-indent:2em">Covalent bonding radiopharmaceuticals have been developed in some studies, but they all have obvious deficiencies, mainly due to their high lipophilicity and non-specific covalent bonding. These fatal defects make them completely unable to be used for targeted radionuclide therapy.
+<p style="text-indent:2em">An intriguing result is presented in Fig. 2, where SiteAF3, when utilizing AF3_MSA, consistently demonstrates higher cumulative prediction accuracy than the standard AF3 model within the 0-10 Å range, which aligns with our expectations. However, when not employing AF3_MSA, SiteAF3 initially underperforms compared to AF3. Interestingly, beyond a threshold of 5 Å, the proportion of correctly predicted targets for the po+hot and baseline configurations gradually exceeds that of AF3. This observation suggests that the MSA templates leveraged by AF3 might occasionally introduce misleading information regarding the binding site for unseen protein-ligand pairs. This trend was not observed in the PoseBustersV2 dataset, where all data were included in AF3's training set. This discrepancy suggests a potential overfitting of the genetic searching-derived data during the representation learning phase for seen datasets. To our delight, pocket masked AF3 MSA mode consistently performed the best within the 0-10 Å range: its trend in the range of 0-5 Å was the same as that of the model using full-length MSA templates, but with a greater slope. In the range of 5-10 Å, it was always higher than the models without using genetic searching, and the slope of the ending curve tended to be consistent with the others. This result suggested that pocket guidance can effectively eliminate the hidden bias in full-length MSA templates
 
-<span id="more"></span>
+<p><img src="/2025/07/27/SiteAF3/Table-1.png" alt="3"></p>
+<p style="text-indent:2em">Prediction accuracy across biomolecular complexes.
 
-<p><img src="/2024/03/01/Covalent-Radiopharmaceuticals/1.jpg" alt="1.jpg"></p>
-<p style="text-indent:2em">Traditional covalent nuclear drugs directly conjugates nuclides on the basis of covalent drugs, lacking rational design. We solve the sore points of targeted radionuclide therapy by adding covalent warheads to nuclear drugs. We can realize high uptake, long retention and strong curative effect through irreversible covalent binding .
+<p style="text-indent:2em">SiteAF3 contributes a lot in protein and small molecule interaction modelling, while keeps outperforming AlphaFold3 on other datasets.
 
-<p><img src="/2024/03/01/Covalent-Radiopharmaceuticals/2.jpg" alt="2.jpg"></p>
-<p style="text-indent:2em">First, we demonstrate the covalent mechanism at the molecular level. At the start, we did autoradiograph. The RDC-protein complex’s blots in autoradiograph highly matched that in Coomassie blue protein staining while covalent-warhead-blocked RDC seemed no binding. Then we used MS/MS and docking confirmed specific covalent binding sites. 
-
-<p><img src="/2024/03/01/Covalent-Radiopharmaceuticals/3.jpg" alt="3.jpg"></p>
-<p style="text-indent:2em">And then we took it a step further in vivo. To our astonishment and delight, the images and therapeutic effect are rather beautiful. At 9 hours, you can see much higher accumulation on tumor, and clearer background. 
-
-<p><img src="/2024/03/01/Covalent-Radiopharmaceuticals/4.jpg" alt="4.jpg"></p>
+<p><strong>Haocheng, Tang</strong>.; Junmei, Wang. Accurate Site-specific Folding via Conditional Diffusion Based on Alphafold3. <em>BioArxiv</em>, 2025, 10.1101&#x2F;2025.07.06.663385.</p>
 ]]></content>
       <categories>
         <category>Scientific Research</category>
       </categories>
       <tags>
-        <tag>Radiopharmaceuticals</tag>
         <tag>Drug Discovery</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo博客如何插入图片</title>
-    <url>/2024/02/29/Hexo%E5%8D%9A%E5%AE%A2%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<p>众所周知，在md文件中插入图片的语法为<code>![A](path, &quot;title&quot;)</code>。</p>
-<span id="more"></span>
-
-<p>其中<strong>方括号中A</strong>是图片描述（选填），<strong>圆括号中path</strong>是图片路径（必填），<strong>引号中title</strong>是图片悬浮标题（选填）。</p>
-<p>一般来说有三种图片路径，分别是<strong>相对路径，绝对路径和网络路径</strong>。前人之述备矣。在这里我们主要介绍一下在Hexo中如何成功地部署图片。</p>
-<p>在hexo中使用<strong>文章资源文件夹</strong>需要在<code>config.yaml</code>文件中更改一下配置：</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>当该配置被应用后，使用<code>hexo new</code>&#x2F;<code>hexo n</code>命令创建新文章时，会生成相同名字的文件夹，也就是文章资源文件夹。例如：</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;**Hexo博客如何插入图片**&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>npm install hexo-renderer-marked</code>安装插件，之后在<code>config.yaml</code>中<code>post_asset_folder: true</code>后增加两行代码，更改配置如下：</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder</span>: <span class="literal">true</span></span><br><span class="line"><span class="attr">marked</span>:</span><br><span class="line">  <span class="attr">prependRoot</span>: <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>之后就可以在使用<code>![](image.jpg)</code>的方式愉快的插入图片了！</p>
-]]></content>
-      <categories>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo-NexT首页浮动预览</title>
-    <url>/2024/02/28/Hexo-NexT%E9%A6%96%E9%A1%B5%E6%B5%AE%E5%8A%A8%E9%A2%84%E8%A7%88/</url>
-    <content><![CDATA[<p>NexT: 从<a href="https://theme-next.js.org/next-7-6-0-released/?highlight=auto_excerpt#Remove-cheers-and-auto-excerpt-1284">NexT 7.6.0</a>开始，NexT取消了首页预览设置，即auto_excerpt。</p>
-<p><a href="https://hexo.io/docs/tag-plugins#Post-Excerpt">Hexo Post Excerpt</a>支持在文章中嵌入标记</p>
-<span id="more"></span>
-
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
-
-<p>会将其之上的内容作为预览内容</p>
-]]></content>
-      <categories>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NexT设置彩色标签</title>
-    <url>/2024/02/28/NexT%E8%AE%BE%E7%BD%AE%E5%BD%A9%E8%89%B2%E6%A0%87%E7%AD%BE/</url>
-    <content><![CDATA[<p>效果图详见我的网站：<a href="https://hactang.github.io/tags/">Tags | HaCTang’s Group</a>。</p>
-<p>参考了<a href="https://grainmad.github.io/2022/12/07/NEXT%E8%AE%BE%E7%BD%AE%E5%BD%A9%E8%89%B2%E6%A0%87%E7%AD%BE/">NEXT设置彩色标签 | 代码如诗 (grainmad.github.io)</a>的步骤。</p>
-<span id="more"></span>
-
-<h1 id="1-标签页设置彩色标签"><a href="#1-标签页设置彩色标签" class="headerlink" title="1.标签页设置彩色标签"></a><strong>1.标签页设置彩色标签</strong></h1><p>路径 <code>\node_modules\hexo-theme-next\layout</code>下新建<code>tag-color.njk</code>，将以下代码粘贴</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">     <span class="keyword">var</span> alltags = <span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&#x27;tag-cloud-tags&#x27;</span>);</span><br><span class="line">     <span class="keyword">var</span> tags = alltags[<span class="number">0</span>].<span class="title function_">getElementsByTagName</span>(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">var</span> i = tags.<span class="property">length</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">       <span class="keyword">var</span> golden_ratio = <span class="number">0.618033988749895</span>;</span><br><span class="line">       <span class="keyword">var</span> s = <span class="number">0.5</span>;</span><br><span class="line">       <span class="keyword">var</span> v = <span class="number">0.999</span>;</span><br><span class="line">       <span class="keyword">var</span> h = golden_ratio + <span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">0.8</span> - <span class="number">0.5</span>;</span><br><span class="line">       <span class="keyword">var</span> h_i = <span class="built_in">parseInt</span>(h * <span class="number">6</span>);</span><br><span class="line">       <span class="keyword">var</span> f = h * <span class="number">6</span> - h_i;</span><br><span class="line">       <span class="keyword">var</span> p = v * (<span class="number">1</span> - s);</span><br><span class="line">       <span class="keyword">var</span> q = v * (<span class="number">1</span> - f * s);</span><br><span class="line">       <span class="keyword">var</span> t = v * (<span class="number">1</span> - (<span class="number">1</span> - f) * s);</span><br><span class="line">       <span class="keyword">var</span> r, g, b;</span><br><span class="line">       <span class="keyword">switch</span> (h_i) &#123;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">              r = v;</span><br><span class="line">              g = t;</span><br><span class="line">              b = p;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">              r = q;</span><br><span class="line">              g = v;</span><br><span class="line">              b = p;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">              r = p;</span><br><span class="line">              g = v;</span><br><span class="line">              b = t;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">3</span> :</span><br><span class="line">              r = p;</span><br><span class="line">              g = q;</span><br><span class="line">              b = v;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">              r = t;</span><br><span class="line">              g = p;</span><br><span class="line">              b = v;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">              r = v;</span><br><span class="line">              g = p;</span><br><span class="line">              b = q;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="attr">default</span>:</span><br><span class="line">              r = <span class="number">1</span>;</span><br><span class="line">              g = <span class="number">1</span>;</span><br><span class="line">              b = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">       tags[i].<span class="property">style</span>.<span class="property">background</span> = <span class="string">&quot;rgba(&quot;</span>+<span class="built_in">parseInt</span>(r*<span class="number">255</span>)+<span class="string">&quot;,&quot;</span>+<span class="built_in">parseInt</span>(g*<span class="number">255</span>)+<span class="string">&quot;,&quot;</span>+<span class="built_in">parseInt</span>(b*<span class="number">255</span>)+<span class="string">&quot;,&quot;</span>+<span class="number">0.7</span>+<span class="string">&quot;)&quot;</span>;</span><br><span class="line">     &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"> </span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  <span class="selector-class">.tag-cloud-tags</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">text-align</span>: center;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">counter-reset</span>: tags;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  <span class="selector-class">.tag-cloud-tags</span> <span class="selector-tag">a</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">display</span>: inline-block;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">border</span>: <span class="number">0px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">padding</span>: <span class="number">0px</span> <span class="number">10px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">margin</span>: <span class="number">8px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">color</span>: <span class="built_in">rgba</span>(<span class="number">34</span>, <span class="number">34</span>, <span class="number">34</span>, <span class="number">0.8</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="comment">/* 文字前添加相应的符号，content后的Unicode可以自定义*/</span></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  <span class="selector-class">.tag-cloud-tags</span> <span class="selector-tag">a</span><span class="selector-pseudo">:before</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">font-family</span>: <span class="string">&#x27;Font Awesome 5 Free&#x27;</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">content</span>: <span class="string">&quot;\f02b&quot;</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">font-weight</span>: <span class="number">900</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"> </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  <span class="selector-class">.tag-cloud-tags</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">     <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">5px</span> <span class="number">15px</span> <span class="number">0px</span> <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,.<span class="number">4</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">     <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">     <span class="attribute">transition-duration</span>: <span class="number">0.15s</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>然后在<code>node_modules\hexo-theme-next\layout\page.njk</code>中以下位置添加<code>&#123;% include 'tag-color.njk' %&#125;</code></p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;div <span class="keyword">class</span>=<span class="string">&quot;post-body&#123;% if page.direction and page.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot;</span>&gt;</span><br><span class="line">  &#123;%- <span class="keyword">if</span> page.<span class="property">type</span> === <span class="string">&#x27;tags&#x27;</span> %&#125;</span><br><span class="line">    &#123;%- include <span class="string">&#x27;_partials/page/tags.njk&#x27;</span> -%&#125;</span><br><span class="line">  &#123;% elif page.<span class="property">type</span> === <span class="string">&#x27;categories&#x27;</span> %&#125;</span><br><span class="line">    &#123;%- include <span class="string">&#x27;_partials/page/categories.njk&#x27;</span> -%&#125;</span><br><span class="line">  &#123;% elif page.<span class="property">type</span> === <span class="string">&#x27;schedule&#x27;</span> %&#125;</span><br><span class="line">    &#123;%- include <span class="string">&#x27;_partials/page/schedule.njk&#x27;</span> -%&#125;</span><br><span class="line">  &#123;% <span class="keyword">else</span> %&#125;</span><br><span class="line">    &#123;&#123; page.<span class="property">content</span> &#125;&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&#123;% include <span class="string">&#x27;tag-color.njk&#x27;</span> %&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="2-文章底部标签"><a href="#2-文章底部标签" class="headerlink" title="2.文章底部标签"></a>2.文章底部标签</h1><p>找到<code>node_modules\hexo-theme-next\layout\_macro\post.njk</code>，并在以下含<code>post-tags</code>类的<code>&lt;div&gt;</code>标签后添加<code>&lt;script&gt;</code>和<code>&lt;style&gt;</code>标签，另外注意标签的图标可以在<code>theme.tag_icon</code>字段设置为<code>true</code>替换<code>#</code></p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&#123;%- set tag_indicate = <span class="string">&#x27;&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;&#x27;</span> <span class="keyword">if</span> theme.<span class="property">tag_icon</span> <span class="keyword">else</span> <span class="string">&#x27;#&#x27;</span> %&#125;</span><br><span class="line">&lt;div <span class="keyword">class</span>=<span class="string">&quot;post-tags&quot;</span>&gt;</span><br><span class="line">  &#123;%- <span class="keyword">for</span> tag <span class="keyword">in</span> post.<span class="property">tags</span>.<span class="title function_">toArray</span>() %&#125;</span><br><span class="line">    &lt;a href=<span class="string">&quot;&#123;&#123; url_for(tag.path) &#125;&#125;&quot;</span> rel=<span class="string">&quot;tag&quot;</span>&gt;&#123;&#123; tag_indicate &#125;&#125; &#123;&#123; tag.<span class="property">name</span> &#125;&#125;&lt;/a&gt;</span><br><span class="line">  &#123;%- endfor %&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">var</span> tagsall=<span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&quot;post-tags&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">for</span> (<span class="keyword">var</span> i = tagsall.<span class="property">length</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">var</span> tags=tagsall[i].<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;a&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">for</span> (<span class="keyword">var</span> j = tags.<span class="property">length</span> - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> golden_ratio = <span class="number">0.618033988749895</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> s = <span class="number">0.5</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> v = <span class="number">0.999</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> h = golden_ratio + <span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">0.8</span> - <span class="number">0.5</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> h_i = <span class="built_in">parseInt</span>(h * <span class="number">6</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> f = h * <span class="number">6</span> - h_i;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> p = v * (<span class="number">1</span> - s);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> q = v * (<span class="number">1</span> - f * s);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> t = v * (<span class="number">1</span> - (<span class="number">1</span> - f) * s);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">var</span> r, g, b;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="keyword">switch</span> (h_i) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="keyword">case</span> <span class="number">0</span>:</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = t;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = p;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  <span class="keyword">break</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="keyword">case</span> <span class="number">1</span>:</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = q;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = p;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  <span class="keyword">break</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="keyword">case</span> <span class="number">2</span>:</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = p;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = t;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  <span class="keyword">break</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="keyword">case</span> <span class="number">3</span> :</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = p;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = q;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  <span class="keyword">break</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="keyword">case</span> <span class="number">4</span>:</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = t;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = p;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  <span class="keyword">break</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="keyword">case</span> <span class="number">5</span>:</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = p;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = q;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  <span class="keyword">break</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">              <span class="attr">default</span>:</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  r = <span class="number">1</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  g = <span class="number">1</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                  b = <span class="number">1</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          tags[j].<span class="property">style</span>.<span class="property">background</span> = <span class="string">&quot;rgba(&quot;</span>+<span class="built_in">parseInt</span>(r*<span class="number">255</span>)+<span class="string">&quot;,&quot;</span>+<span class="built_in">parseInt</span>(g*<span class="number">255</span>)+<span class="string">&quot;,&quot;</span>+<span class="built_in">parseInt</span>(b*<span class="number">255</span>)+<span class="string">&quot;,&quot;</span>+<span class="number">0.7</span>+<span class="string">&quot;)&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-class">.post-tags</span> <span class="selector-tag">a</span> &#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">display</span>: inline-block;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">font-size</span>: <span class="number">0.8em</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">padding</span>: <span class="number">0px</span> <span class="number">10px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">color</span>: <span class="built_in">rgb</span>(<span class="number">85</span>, <span class="number">85</span>, <span class="number">85</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">border</span>: <span class="number">0px</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-class">.post-tags</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">5px</span> <span class="number">15px</span> <span class="number">0px</span> <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,.<span class="number">4</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="attribute">transition-duration</span>: <span class="number">0.15s</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Organotrifluoroborate enhances tumor targeting of fibroblast activation protein inhibitors for targeted radionuclide therapy</title>
-    <url>/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/</url>
-    <content><![CDATA[<p style="text-indent:2em">We designed a new radioligand named FT-FAPI which means fast-treatment FAPI. This compound is composed of 3 parts: 18F can be facilely labeled in BF3 via isotopic exchange, DOTA is the gold standard chelator for most radiometals, and finally, the FAPI-04 for FAP targeting. We hope that FT-FAPI can realize radiotheranostics in a single molecule. 
-
-<span id="more"></span>
-
-<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/1.jpg" alt="1"></p>
-<p style="text-indent:2em">We first characterized the 18F labeled FT-FAPI in vitro, as we can see, 18F-FT-FAPI has Good stability, High cellular uptake, High affinity to Fap-positive cells, High internalization rate within 6 hours, and most importantly, the high tumor accumulation and Low non-target uptake as exhibited in biodistribution study
-
-<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/2.jpg" alt="2"></p>
-<p style="text-indent:2em">18F-FT-FAPI shows highest tumour accumulation, and no obvious uptake existed in other major organs except for the kidney and bladder. Compared to 18F-FT-FAPI, the tumour uptake of 18F-AMBF3-FAPI-04 is significantly lower. More importantly, much higher uptake exists in the non-target organs including the gallbladder, liver, and intestine, indicating that the lack of DOTA affects the excretion of FAPI. To our delight, the tumour uptake of 18F-FT-FAPI is also significantly higher than that of 68Ga-FAPI-04, suggesting that the introduction of AMBF3 may improve the tumour-targeting of FAPI.
-
-<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/3.jpg" alt="3"></p>
-<p style="text-indent:2em">Therefore, we used 68Ga to label FT-FAPI for the head to head comparison with 68Ga-FAPI-04 in the same mice. Again, we are delighted to find that 68Ga-FT-FAPI shows higher tumour uptake and cleaner background than that of FAPI-04 with 4 hours.
-
-<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/4.jpg" alt="4"></p>
-<p style="text-indent:2em">The biodistribution study corroborates to the head-to-head imaging that FT-FAPI owns higher tumor uptake. In addition, 68Ga-FT-FAPI shows significantly higher internalization rates than FAPI-04. The molecular docking shows that FT-FAPI may form more hydrogen bonds with residues on FAP protein due to its extra triazole ring and charge-separating groups on AMBF3. The above data may explain the excellent pharmacokinetics of FT-FAPI, and made 18F/68Ga-FT-FAPI promising for cancer diagnosis.
-
-<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/5.jpg" alt="5"></p>
-<p style="text-indent:2em">Encouraged by the data of FT-FAPI, we then screened the FAP binding moiety, expecting to obtain more potent compounds. We designed 3 additional compounds composed of AMBF3, DOTA, and FAPI-02/21/46 since these 3 compounds are accepted as potent FAP inhibitors in preclinical and clinical studies. As shown in these Figures, 18F-FT-FAPI has the highest tumour uptake and the lowest non-target uptake, followed by FT-FAPI-21 and FT-FAPI-46, and finally FT-FAPI-02. Thus, FT-FAPI was promoted to the exploration of subsequent therapeutic experiments.
-
-<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/6.jpg" alt="6"></p>
-<p style="text-indent:2em">Due to the rapid clearance of FAPI in vivo, we think that the therapeutic nuclide suitable for FT-FAPI should be 213Bi whose half-life is 46 min. Before the radionuclide treatment, we labeled FT-FAPI with 209Bi and 18F to mimic the pharmacokinetics of 213Bi-FT-FAPI. As we can see, high tumour uptake and rapid renal clearance of this tracer within 2 h post-injection can be observed and quantified by in vivo PET imaging and ex vivo biodistribution studies.
-
-<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/7.jpg" alt="7"></p>
-<p style="text-indent:2em">The body weight of all mice remained stable during the 30 days. And no long-term toxicity was found in the treatment group, as tested by blood counts and biochemistry analysis.
-
-<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/8.jpg" alt="8"></p>
-<p style="text-indent:2em">Finally, we explored whether this companion diagnostic method can be applied to other alpha nuclides. We performed PET imaging using 18F-natPb-FT-FAPI and 18F-natTb-FT-FAPI. 18F-natPb-FT-FAPI exhibits significantly lower tumour uptake compared to both 18F-FT-FAPI and 68Ga-FT-FAPI. Since the coordination of DOTA to 212Pb is actually unstable, another chelator named TCMC is considered as the better choice for 212Pb. Therefore, we replaced DOTA on FT-FAPI with TCMC and conducted 18F-natPb-TCMC-FT-FAPI PET imaging and the results show that the modification of the chelator significantly reduced the radioactive uptake at the tumour. These results indicate that isotopic substitution in chelators will seriously affect the in vivo pharmacokinetics. For FT-FAPI, the 18F and radiometal labeling moieties are orthogonal, so, 18F-FT-FAPI as a companion diagnostic strategy is universal for α nuclides.
-
-<p><img src="/2023/09/27/Organotrifluoroborate-enhances-tumor-targeting-of-fibroblast-activation-protein-inhibitors-for-targeted-radionuclide-therapy/9.jpg" alt="9"></p>
-<p>Yu, Liu.; <strong>Haocheng, Tang</strong>.; Tianchi, Song.; Mengxin, Xu.; Junyi, Chen.; Xi-Yang, Cui.; Yuxiang, Han.; Zhu, Li.; Zhibo, Liu. Organotrifluoroborate Enhances Tumour Targeting of Fibroblast Activation Protein Inhibitors for Targeted Radionuclide Therapy. <em>Eur J Nucl Med Mol Imaging</em>, 2023, 10.1007&#x2F;s00259-023-06230–06233.</p>
-]]></content>
-      <categories>
-        <category>Scientific Research</category>
-      </categories>
-      <tags>
-        <tag>Radiopharmaceuticals</tag>
-        <tag>Drug Discovery</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/08/08/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
+        <tag>AlphaFold</tag>
+        <tag>Diffusion</tag>
       </tags>
   </entry>
 </search>
