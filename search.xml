@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Install extensions on new Cursor</title>
+    <url>/2025/07/27/CursorExtensions/</url>
+    <content><![CDATA[<p>Found the installation path of Cursor on your own PC (rather than server).</p>
+<p>Found <code>product.json</code> in <code>cursor\resources\app</code></p>
+<p>Change all <code>marketplace.cursorapi.com</code> into  <code>marketplace.visualstudioapi.com</code></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Script</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Gromacs2024.4</title>
     <url>/2025/01/18/MingYuanGmx24/</url>
     <content><![CDATA[<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>After login, use <code>nano</code> or <code>vim</code> to modify <code>~/.bashrc</code>. Add the following code to the end of <code>~/.bashrc</code>and save the file:</p>
@@ -25,6 +40,8 @@
     <url>/2025/01/10/MingYuanConda/</url>
     <content><![CDATA[<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>After login, use <code>nano</code> or <code>vim</code> to modify <code>~/.bashrc</code>. Add the following code to the end of <code>~/.bashrc</code>and save the file:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">. /opt/miniconda/etc/profile.d/conda.sh</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;/opt/miniconda/bin:<span class="variable">$PATH</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
 
 <p>Then in shell:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>

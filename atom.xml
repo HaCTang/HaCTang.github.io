@@ -6,7 +6,7 @@
   <link href="https://hactang.github.io/atom.xml" rel="self"/>
   
   <link href="https://hactang.github.io/"/>
-  <updated>2025-01-18T16:04:57.377Z</updated>
+  <updated>2025-07-27T15:09:12.990Z</updated>
   <id>https://hactang.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Install extensions on new Cursor</title>
+    <link href="https://hactang.github.io/2025/07/27/CursorExtensions/"/>
+    <id>https://hactang.github.io/2025/07/27/CursorExtensions/</id>
+    <published>2025-07-27T15:04:20.000Z</published>
+    <updated>2025-07-27T15:09:12.990Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Found the installation path of Cursor on your own PC (rather than server).&lt;/p&gt;
+&lt;p&gt;Found &lt;code&gt;product.json&lt;/code&gt; in &lt;code&gt;cursor&#92;resourc</summary>
+      
+    
+    
+    
+    <category term="Linux" scheme="https://hactang.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://hactang.github.io/tags/Linux/"/>
+    
+    <category term="Script" scheme="https://hactang.github.io/tags/Script/"/>
+    
+  </entry>
   
   <entry>
     <title>Gromacs2024.4</title>
@@ -45,13 +70,11 @@
     <link href="https://hactang.github.io/2025/01/10/MingYuanConda/"/>
     <id>https://hactang.github.io/2025/01/10/MingYuanConda/</id>
     <published>2025-01-10T21:36:36.000Z</published>
-    <updated>2025-01-14T20:59:56.009Z</updated>
+    <updated>2025-07-27T15:10:55.879Z</updated>
     
     
-      
-      
-    <summary type="html">&lt;h2 id=&quot;Installation&quot;&gt;&lt;a href=&quot;#Installation&quot; class=&quot;headerlink&quot; title=&quot;Installation&quot;&gt;&lt;/a&gt;Installation&lt;/h2&gt;&lt;p&gt;After login, use &lt;code&gt;nano&lt;/c</summary>
-      
+    <summary type="html">&lt;h2 id=&quot;Installation&quot;&gt;&lt;a href=&quot;#Installation&quot; class=&quot;headerlink&quot; title=&quot;Installation&quot;&gt;&lt;/a&gt;Installation&lt;/h2&gt;&lt;p&gt;After login, use &lt;code&gt;nano&lt;/code&gt; or &lt;code&gt;vim&lt;/code&gt; to modify &lt;code&gt;~/.bashrc&lt;/code&gt;. Add the following code to the end of &lt;code&gt;~/.bashrc&lt;/code&gt;and save the file:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;. /opt/miniconda/etc/profile.d/conda.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; PATH=&lt;span class=&quot;string&quot;&gt;&amp;quot;/opt/miniconda/bin:&lt;span class=&quot;variable&quot;&gt;$PATH&lt;/span&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     

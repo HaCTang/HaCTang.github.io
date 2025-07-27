@@ -156,7 +156,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -213,6 +213,87 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hactang.github.io/2025/07/27/CursorExtensions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
+      <meta itemprop="name" content="HaCTang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HaCTang's Group">
+      <meta itemprop="description" content="Happy & Pure">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | HaCTang's Group">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/07/27/CursorExtensions/" class="post-title-link" itemprop="url">Install extensions on new Cursor</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-07-27 11:04:20 / Modified: 11:09:12" itemprop="dateCreated datePublished" datetime="2025-07-27T11:04:20-04:00">2025-07-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Found the installation path of Cursor on your own PC (rather than server).</p>
+<p>Found <code>product.json</code> in <code>cursor\resources\app</code></p>
+<p>Change all <code>marketplace.cursorapi.com</code> into  <code>marketplace.visualstudioapi.com</code></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -344,7 +425,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-01-14 15:59:56" itemprop="dateModified" datetime="2025-01-14T15:59:56-05:00">2025-01-14</time>
+      <time title="Modified: 2025-07-27 11:10:55" itemprop="dateModified" datetime="2025-07-27T11:10:55-04:00">2025-07-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -368,41 +449,14 @@
     <div class="post-body" itemprop="articleBody">
           <h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>After login, use <code>nano</code> or <code>vim</code> to modify <code>~/.bashrc</code>. Add the following code to the end of <code>~/.bashrc</code>and save the file:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">. /opt/miniconda/etc/profile.d/conda.sh</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;/opt/miniconda/bin:<span class="variable">$PATH</span>&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>Then in shell:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-
-<p>Test if conda is initialized successfully：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda --version</span><br></pre></td></tr></table></figure>
-
-<p>if the result is <code>conda 24.11.1</code>, it means you can access conda.</p>
-<h2 id="Rule"><a href="#Rule" class="headerlink" title="Rule"></a>Rule</h2><p>When you use conda to build a new environment, please name it as your “**{id}_{env_name}**”, avoid potential collision:<br>For example, “hat170_tf1.4”.</p>
-<h2 id="For-those-who-want-to-use-GPU-in-tmux"><a href="#For-those-who-want-to-use-GPU-in-tmux" class="headerlink" title="For those who want to use GPU in tmux:"></a>For those who want to use GPU in tmux:</h2><p>If you want to use a different CUDA and cuDNN version in your environment, please change the following code according to your own environment. </p>
-<p>Open tmux:</p>
-<ol>
-<li>First biuld a activate script dir:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/.conda/envs/hat170_tf1.15GPU/etc/conda/activate.d</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>Biuld a bash file to set environmental variables:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> &lt;&lt; <span class="string">&#x27;EOF&#x27;</span> &gt; ~/.conda/envs/hat170_tf1.15GPU/etc/conda/activate.d/env_vars.sh</span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="built_in">export</span> CUDA_HOME=/usr/local/cuda</span><br><span class="line"><span class="built_in">export</span> CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7,8,9</span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/usr/local/amber24/lib:/usr/local/cuda/lib:/usr/local/cuda/lib64</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>Add execution permission:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x ~/.conda/envs/hat170_tf1.15GPU/etc/conda/activate.d/env_vars.sh</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>Reactivate the environment to apply the settings:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda deactivate</span><br><span class="line">conda activate hat170_tf1.15GPU</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>Test your settings:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;CUDA_HOME: <span class="variable">$CUDA_HOME</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;CUDA_VISIBLE_DEVICES: <span class="variable">$CUDA_VISIBLE_DEVICES</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;LD_LIBRARY_PATH: <span class="variable">$LD_LIBRARY_PATH</span>&quot;</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/01/10/MingYuanConda/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -989,98 +1043,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/03/03/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-3-%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%B1%88%E9%AB%8B%E5%92%8C%E4%BC%B8%E9%AB%8B/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hactang.github.io/2024/03/03/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-2-%E8%82%A9%E5%85%B3%E8%8A%82%E5%A4%96%E6%97%8B%E5%8F%97%E9%99%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.JPG">
-      <meta itemprop="name" content="HaCTang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HaCTang's Group">
-      <meta itemprop="description" content="Happy & Pure">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | HaCTang's Group">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/03/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-2-%E8%82%A9%E5%85%B3%E8%8A%82%E5%A4%96%E6%97%8B%E5%8F%97%E9%99%90/" class="post-title-link" itemprop="url">[体能康复]2.肩关节外旋受限</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-03-03 00:52:48" itemprop="dateCreated datePublished" datetime="2024-03-03T00:52:48-05:00">2024-03-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-09 01:26:54" itemprop="dateModified" datetime="2024-03-09T01:26:54-05:00">2024-03-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Physical-Training/" itemprop="url" rel="index"><span itemprop="name">Physical Training</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>开始之前，先来谈谈什么是外旋：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/03/03/%E4%BD%93%E8%83%BD%E5%BA%B7%E5%A4%8D-2-%E8%82%A9%E5%85%B3%E8%8A%82%E5%A4%96%E6%97%8B%E5%8F%97%E9%99%90/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
